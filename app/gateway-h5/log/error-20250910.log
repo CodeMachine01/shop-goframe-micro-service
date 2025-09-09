@@ -1,0 +1,19 @@
+2025-09-10T01:51:18 {b44980219fae6318c612cc11e69c9a9c} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/consignee HTTP/1.1" 52640.300, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 52, "", ""
+Stack:
+1. ConsigneeInfo Create 插入失败: INSERT INTO `consignee_info`(`user_id`,`is_default`,`name`,`phone`,`province`,`city`,`town`,`street`,`detail`,`created_at`,`updated_at`) VALUES(2,1,'羿沐宸','18977 799523','陕西省','西安市','其他','其他','dolore exercitation laboris cillum','2025-09-10 01:51:18','2025-09-10 01:51:18') : Error 1406 (22001): Data too long for column 'phone' at row 1
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/consignee_info/v1.(*consigneeInfoClient).Create
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/consignee_info/v1/consignee_info_grpc.pb.go:50
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).ConsigneeInfoCreate
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_consignee_info_create.go:18
+   7).  shop-goframe-micro-service/utility.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware.go:32
+
+2025-09-10T01:52:03 {200f4fb399ae6318e0f18f4517405d85} gateway-h5 service deregister: &{Service:0xc000289c00 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
