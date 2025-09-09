@@ -2,7 +2,7 @@ syntax="proto3";
 
 package consignee_info;
 
-option go_package="app/user/manifest/protobuf/user_info/v1";
+option go_package="app/user/manifest/protobuf/consignee_info/v1";
 
 import "pbentity/consignee_info.proto";
 
@@ -13,7 +13,7 @@ service consignee_info{
   rpc GetList(ConsigneeInfoGetListReq) returns (ConsigneeInfoGetListRes){}
 }
 
-//新消息定义
+//增
 message ConsigneeInfoCreateReq{
   uint32 UserId=1;
   uint32 IsDefault=2; // 默认地址1 非默认0
@@ -26,30 +26,44 @@ message ConsigneeInfoCreateReq{
   string Detail    = 9; // 地址详情
 }
 
-message ConsigneeInfoDeleteReq{
-  uint32 id=1;
-}
-
-message ConsigneeInfoUpdateReq{
-  uint32 id=1;
-}
-
-message ConsigneeInfoGetListReq{
-  uint32 page=1;
-  uint32 size=2;
-}
-
-
 message ConsigneeInfoCreateRes {
   uint32 id = 1;
+}
+
+
+//删
+message ConsigneeInfoDeleteReq{
+  uint32 id=1;
 }
 
 message ConsigneeInfoDeleteRes {
 
 }
 
+
+//改
+message ConsigneeInfoUpdateReq{
+  uint32 Id=1;
+  uint32 IsDefault=2; // 默认地址1 非默认0
+  string Name=3;// 姓名
+  string Phone=4;//电话
+  string Province  = 5;  // 省
+  string City      = 6;  // 市
+  string Town      = 7;  // 县区
+  string Street    = 8;  // 街道乡镇
+  string Detail    = 9; // 地址详情
+}
+
 message ConsigneeInfoUpdateRes {
   uint32 id = 1;
+}
+
+
+
+//查
+message ConsigneeInfoGetListReq{
+  uint32 page=1;
+  uint32 size=2;
 }
 
 message ConsigneeInfoGetListRes {
@@ -62,5 +76,13 @@ message ConsigneeInfoListResponse {
   uint32 size = 3;  //每页大小
   uint32 total = 4; //总记录数
 }
+
+
+
+
+
+
+
+
 
 

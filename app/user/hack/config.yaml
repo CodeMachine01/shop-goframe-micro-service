@@ -1,0 +1,15 @@
+
+# CLI tool, only in development environment.
+# https://goframe.org/docs/cli
+gfcli:
+  gen:
+    dao:      # 数据库访问对象生成配置
+      - link: "mysql:root:root@tcp(127.0.0.1:3306)/user"
+        descriptionTag: true
+    pbentity:   # Protobuf 实体生成配置
+      - link: "mysql:root:root@tcp(127.0.0.1:3306)/user"
+
+  docker:
+    build: "-a amd64 -s linux -p temp -ew"
+    tagPrefixes:
+      - my.image.pub/my-app
