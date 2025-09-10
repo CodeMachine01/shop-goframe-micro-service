@@ -8,7 +8,7 @@ import (
 	"github.com/gogf/gf/v2/os/gtime"
 )
 
-// UserInfo is the golang structure for table consignee_info.
+// UserInfo is the golang structure for table user_info.
 type UserInfo struct {
 	Id           int         `json:"id"           orm:"id"            description:""`          //
 	Name         string      `json:"name"         orm:"name"          description:"用户名"`       // 用户名

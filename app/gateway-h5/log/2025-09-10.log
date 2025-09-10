@@ -45,3 +45,27 @@
 | :8199   | ALL    | /swagger/*          | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                     | HOOK_BEFORE_SERVE               |
 ----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
 
+2025-09-10T15:11:42 [INFO] {707d719744da631815d1f85eee5e998c} gateway-h5 swagger ui is serving at address: http://127.0.0.1:8199/swagger/
+2025-09-10T15:11:42 [INFO] gateway-h5 pid[1456828]: http server started listening on [:8199]
+2025-09-10T15:11:42 [INFO] {707d719744da631815d1f85eee5e998c} gateway-h5 openapi specification is serving at address: http://127.0.0.1:8199/api.json
+2025-09-10T15:11:42 [DEBU] {707d719744da631815d1f85eee5e998c} gateway-h5 service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |        ROUTE        |                                                 HANDLER                                                 |           MIDDLEWARE            |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| :8199   | ALL    | /*                  | shop-goframe-micro-service/utility.MiddlewareCORS                                                       | GLOBAL MIDDLEWARE               |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| :8199   | ALL    | /api.json           | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                   |                                 |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| :8199   | DELETE | /frontend/consignee | shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).ConsigneeInfoDelete  | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| :8199   | GET    | /frontend/consignee | shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).ConsigneeInfoGetList | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| :8199   | POST   | /frontend/consignee | shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).ConsigneeInfoCreate  | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| :8199   | PUT    | /frontend/consignee | shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).ConsigneeInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+| :8199   | ALL    | /swagger/*          | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                     | HOOK_BEFORE_SERVE               |
+----------|--------|---------------------|---------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-10T15:17:56 [DEBU] {707d719744da631815d1f85eee5e998c} gateway-h5 service deregister: &{Service:0xc00029a930 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}

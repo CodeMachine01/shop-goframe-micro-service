@@ -9,9 +9,9 @@ import (
 	"github.com/gogf/gf/v2/os/gtime"
 )
 
-// UserInfo is the golang structure of table consignee_info for DAO operations like Where/Data.
+// UserInfo is the golang structure of table user_info for DAO operations like Where/Data.
 type UserInfo struct {
-	g.Meta       `orm:"table:consignee_info, do:true"`
+	g.Meta       `orm:"table:user_info, do:true"`
 	Id           any         //
 	Name         any         // 用户名
 	Avatar       any         // 头像

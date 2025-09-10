@@ -11,7 +11,7 @@ import (
 	"github.com/gogf/gf/v2/frame/g"
 )
 
-// UserInfoDao is the data access object for the table consignee_info.
+// UserInfoDao is the data access object for the table user_info.
 type UserInfoDao struct {
 	table    string             // table is the underlying table name of the DAO.
 	group    string             // group is the database configuration group name of the current DAO.
@@ -19,7 +19,7 @@ type UserInfoDao struct {
 	handlers []gdb.ModelHandler // handlers for customized model modification.
 }
 
-// UserInfoColumns defines and stores column names for the table consignee_info.
+// UserInfoColumns defines and stores column names for the table user_info.
 type UserInfoColumns struct {
 	Id           string //
 	Name         string // 用户名
@@ -35,7 +35,7 @@ type UserInfoColumns struct {
 	DeletedAt    string // 删除时间
 }
 
-// userInfoColumns holds the columns for the table consignee_info.
+// userInfoColumns holds the columns for the table user_info.
 var userInfoColumns = UserInfoColumns{
 	Id:           "id",
 	Name:         "name",
@@ -55,7 +55,7 @@ var userInfoColumns = UserInfoColumns{
 func NewUserInfoDao(handlers ...gdb.ModelHandler) *UserInfoDao {
 	return &UserInfoDao{
 		group:    "default",
-		table:    "consignee_info",
+		table:    "user_info",
 		columns:  userInfoColumns,
 		handlers: handlers,
 	}

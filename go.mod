@@ -9,6 +9,7 @@ require (
 	github.com/gogf/gf/contrib/registry/etcd/v2 v2.9.3
 	github.com/gogf/gf/contrib/rpc/grpcx/v2 v2.9.3
 	github.com/gogf/gf/v2 v2.9.3
+	github.com/golang-jwt/jwt/v4 v4.5.2
 	google.golang.org/grpc v1.75.0
 	google.golang.org/protobuf v1.36.9
 )
