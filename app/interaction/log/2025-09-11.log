@@ -1,0 +1,12 @@
+2025-09-11T00:54:55 [DEBU] {ec69ee211efa63188c90731be9d71141} interaction-service service register: &{Head: Deployment: Namespace: Name:interaction Version: Endpoints:192.168.190.1:31002,192.168.72.1:31002,172.30.103.68:31002,172.29.208.1:31002,172.17.144.1:31002 Metadata:map[protocol:grpc]}
+2025-09-11T00:54:55 [INFO] {ec69ee211efa63188c90731be9d71141} interaction-service pid[1514244]: grpc server started listening on [:31002]
+2025-09-11T01:02:12 [INFO] interaction-service signal received: interrupt, gracefully shutting down
+2025-09-11T01:02:12 [DEBU] {ec69ee211efa63188c90731be9d71141} interaction-service service deregister: &{Service:0xc0002b42a0 Endpoints:192.168.190.1:31002,192.168.72.1:31002,172.30.103.68:31002,172.29.208.1:31002,172.17.144.1:31002 Metadata:map[protocol:grpc]}
+2025-09-11T01:02:16 [DEBU] {d09c7e4e86fa631806898164cc91f7bd} interaction-service service register: &{Head: Deployment: Namespace: Name:interaction Version: Endpoints:192.168.190.1:31002,192.168.72.1:31002,172.30.103.68:31002,172.29.208.1:31002,172.17.144.1:31002 Metadata:map[protocol:grpc]}
+2025-09-11T01:02:17 [INFO] {d09c7e4e86fa631806898164cc91f7bd} interaction-service pid[1511256]: grpc server started listening on [:31002]
+2025-09-11T01:06:03 [INFO] interaction-service signal received: interrupt, gracefully shutting down
+2025-09-11T01:06:03 [DEBU] {d09c7e4e86fa631806898164cc91f7bd} interaction-service service deregister: &{Service:0xc000397dc0 Endpoints:192.168.190.1:31002,192.168.72.1:31002,172.30.103.68:31002,172.29.208.1:31002,172.17.144.1:31002 Metadata:map[protocol:grpc]}
+2025-09-11T01:12:48 [DEBU] {04426c5319fb6318e5d99154f06ab6af} interaction-service service register: &{Head: Deployment: Namespace: Name:interaction Version: Endpoints:192.168.190.1:31002,192.168.72.1:31002,172.30.103.68:31002,172.29.208.1:31002,172.17.144.1:31002 Metadata:map[protocol:grpc]}
+2025-09-11T01:12:48 [INFO] {04426c5319fb6318e5d99154f06ab6af} interaction-service pid[1508776]: grpc server started listening on [:31002]
+2025-09-11T02:01:04 [INFO] interaction-service signal received: interrupt, gracefully shutting down
+2025-09-11T02:01:04 [DEBU] {04426c5319fb6318e5d99154f06ab6af} interaction-service service deregister: &{Service:0xc000189340 Endpoints:192.168.190.1:31002,192.168.72.1:31002,172.30.103.68:31002,172.29.208.1:31002,172.17.144.1:31002 Metadata:map[protocol:grpc]}

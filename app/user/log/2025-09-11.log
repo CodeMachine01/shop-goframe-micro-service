@@ -1,0 +1,4 @@
+2025-09-11T01:19:05 [DEBU] {78aff2a937fb63183c5d1f54d1249688} user-service service register: &{Head: Deployment: Namespace: Name:user Version: Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-11T01:19:05 [INFO] {78aff2a937fb63183c5d1f54d1249688} user-service pid[1512980]: grpc server started listening on [:31001]
+2025-09-11T02:01:02 [INFO] user-service signal received: interrupt, gracefully shutting down
+2025-09-11T02:01:02 [DEBU] {78aff2a937fb63183c5d1f54d1249688} user-service service deregister: &{Service:0xc0000ba2a0 Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}

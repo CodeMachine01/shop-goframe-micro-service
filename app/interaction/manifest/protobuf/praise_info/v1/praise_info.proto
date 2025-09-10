@@ -1,0 +1,64 @@
+syntax="proto3";
+
+package praise_info;
+
+option go_package="app/user/manifest/protobuf/praise_info/v1";
+
+import "pbentity/praise_info.proto";
+
+service praise_info{
+  rpc Create(PraiseInfoCreateReq) returns (PraiseInfoCreateRes) {}
+  rpc Delete(PraiseInfoDeleteReq) returns (PraiseInfoDeleteRes) {}
+  rpc GetList(PraiseInfoGetListReq) returns (PraiseInfoGetListRes){}
+}
+
+//增（因为这个业务是需要登录鉴权的，所以可以不需要UserId，可以直接从登录的账号获取）
+message PraiseInfoCreateReq{
+  uint32  ObjectId =1; //对象id
+  uint32 Type=2; //点赞类型：1商品 2文章
+}
+
+message PraiseInfoCreateRes {
+  uint32 id = 1;
+}
+
+
+//删
+message PraiseInfoDeleteReq{
+  uint32 Id=1;
+  uint32  ObjectId =2; //对象id
+  uint32 Type=3; //点赞类型：1商品 2文章
+}
+
+message PraiseInfoDeleteRes {
+  uint32 id=1;
+}
+
+
+//查
+message PraiseInfoGetListReq{
+  uint32 type=1;
+  uint32 page=2;
+  uint32 size=3;  //字段编号必须从1开始递增
+}
+
+message PraiseInfoGetListRes {
+  PraiseInfoListResponse data = 1;
+}
+
+message PraiseInfoListResponse {
+  repeated pbentity.PraiseInfo list = 1;  //收藏信息列表
+  uint32 page = 2;  //当前页码
+  uint32 size = 3;  //每页大小
+  uint32 total = 4; //总记录数
+}
+
+
+
+
+
+
+
+
+
+

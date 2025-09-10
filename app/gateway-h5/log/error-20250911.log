@@ -1,0 +1,57 @@
+2025-09-11T01:20:27 {047905e084fb63187e7aec240ef1cb5e} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/collection?type&page&size HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-11T01:46:48 {f4f2edf3f4fc63182111ae6f73b3334a} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/login HTTP/1.1" 35998.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:27
+2. UserInfo Login 登录失败: 密码错误
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:54
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:22
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-11T01:48:35 {187c99f00dfd63182311ae6f5eae15ca} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/collection?type=1&page=1&size=10 HTTP/1.1" 542.100, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无效Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:28
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-11T01:48:59 {50aa2f6713fd63182411ae6fe3a696fa} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/user/info?id HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+用户ID不能为空
+2025-09-11T01:52:36 {244dca0e46fd63182611ae6f5f15cd89} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/collection?type=1&page=1&size=10 HTTP/1.1" 525.400, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无效Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:28
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-11T01:52:57 {6c3d32c44afd63182711ae6f0d120820} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/collection?type=1&page=1&size=10 HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无效Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:28
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-11T02:00:06 {9cf0904cd6fc6318e1be816cfcf84ffc} gateway-h5 service deregister: &{Service:0xc0002bdb20 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}

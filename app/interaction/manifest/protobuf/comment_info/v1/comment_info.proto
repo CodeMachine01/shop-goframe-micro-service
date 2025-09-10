@@ -1,0 +1,63 @@
+syntax="proto3";
+
+package comment_info;
+
+option go_package="app/user/manifest/protobuf/comment_info/v1";
+
+import "pbentity/comment_info.proto";
+
+service comment_info{
+  rpc Create(CommentInfoCreateReq) returns (CommentInfoCreateRes) {}
+  rpc Delete(CommentInfoDeleteReq) returns (CommentInfoDeleteRes) {}
+  rpc GetList(CommentInfoGetListReq) returns (CommentInfoGetListRes){}
+}
+
+//增（因为这个业务是需要登录鉴权的，所以可以不需要UserId，可以直接从登录的账号获取）
+message CommentInfoCreateReq{
+  uint32  ObjectId =1; //对象id
+  uint32 Type=2; //评论类型：1商品 2文章
+  uint32 ParentId=3; //父级评论id
+  string Content=4; //评论内容
+}
+
+message CommentInfoCreateRes {
+  uint32 id = 1;
+}
+
+
+//删
+message CommentInfoDeleteReq{
+  uint32 Id=1;
+}
+
+message CommentInfoDeleteRes {
+  uint32 id=1;
+}
+
+
+//查
+message CommentInfoGetListReq{
+  uint32 page=2;
+  uint32 size=3;  //字段编号必须从1开始递增
+}
+
+message CommentInfoGetListRes {
+  CommentInfoListResponse data = 1;
+}
+
+message CommentInfoListResponse {
+  repeated pbentity.CommentInfo list = 1;  //收藏信息列表
+  uint32 page = 2;  //当前页码
+  uint32 size = 3;  //每页大小
+  uint32 total = 4; //总记录数
+}
+
+
+
+
+
+
+
+
+
+

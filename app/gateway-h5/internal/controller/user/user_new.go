@@ -8,19 +8,22 @@ import (
 	"github.com/gogf/gf/contrib/rpc/grpcx/v2"
 	"shop-goframe-micro-service/app/gateway-h5/api/user"
 	consignee_info "shop-goframe-micro-service/app/user/api/consignee_info/v1"
-	"shop-goframe-micro-service/utility"
+	user_info "shop-goframe-micro-service/app/user/api/user_info/v1"
+	"shop-goframe-micro-service/utility/middleware"
 )
 
 type ControllerV1 struct {
 	ConsigneeInfoClient consignee_info.ConsigneeInfoClient
+	UserInfoClient      user_info.UserInfoClient
 }
 
 func NewV1() user.IUserV1 {
 	var conn = grpcx.Client.MustNewGrpcClientConn("user",
 		grpcx.Client.ChainUnary(
-			utility.GrpcClientTimeout, //超时处理，避免网络异常导致业务网关无限卡死
+			middleware.GrpcClientTimeout, //超时处理，避免网络异常导致业务网关无限卡死
 		))
 	return &ControllerV1{
 		ConsigneeInfoClient: consignee_info.NewConsigneeInfoClient(conn),
+		UserInfoClient:      user_info.NewUserInfoClient(conn),
 	}
 }

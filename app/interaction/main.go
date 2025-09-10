@@ -1,15 +1,16 @@
 package main
 
 import (
+	_ "github.com/gogf/gf/contrib/drivers/mysql/v2"
 	"github.com/gogf/gf/contrib/registry/etcd/v2"
 	"github.com/gogf/gf/contrib/rpc/grpcx/v2"
 	"github.com/gogf/gf/v2/frame/g"
-	_ "shop-goframe-micro-service/app/gateway-h5/internal/packed"
+	_ "shop-goframe-micro-service/app/interaction/internal/packed"
 	"shop-goframe-micro-service/utility/middleware"
 
 	"github.com/gogf/gf/v2/os/gctx"
 
-	"shop-goframe-micro-service/app/gateway-h5/internal/cmd"
+	"shop-goframe-micro-service/app/interaction/internal/cmd"
 )
 
 func main() {
