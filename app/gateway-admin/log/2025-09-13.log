@@ -1,0 +1,38 @@
+2025-09-13 00:52:45.019 [INFO] {544bac2f2a976418f3128c4e6c98dc1d} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-13 00:52:45.019 [INFO] 公众号：王中阳：gateway-admin pid[1743464]: http server started listening on [:8299]
+2025-09-13 00:52:45.021 [INFO] {544bac2f2a976418f3128c4e6c98dc1d} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-13 00:52:45.080 [DEBU] {544bac2f2a976418f3128c4e6c98dc1d} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                 HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                             | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                    |                                 |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                      | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-13 01:18:53.197 [INFO] {bcb8a74a97986418a614e22a6a6fd321} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-13 01:18:53.197 [INFO] 公众号：王中阳：gateway-admin pid[1745632]: http server started listening on [:8299]
+2025-09-13 01:18:53.198 [INFO] {bcb8a74a97986418a614e22a6a6fd321} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-13 01:18:53.247 [DEBU] {bcb8a74a97986418a614e22a6a6fd321} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                 HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                             | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                    |                                 |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                      | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+

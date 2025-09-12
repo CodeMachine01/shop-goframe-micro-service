@@ -54,7 +54,7 @@ func EncryptPassword(password, salt string) string {
 //}
 
 // 生成JWT Token
-func GeneratToken(userId int) (string, time.Time, error) {
+func GenerateToken(userId int) (string, time.Time, error) {
 	expireTime := time.Now().Add(24 * time.Hour)
 	claims := CustomClaims{
 		UserId: userId,

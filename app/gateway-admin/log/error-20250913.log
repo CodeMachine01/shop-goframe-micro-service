@@ -1,0 +1,38 @@
+2025-09-13 01:04:43.845 {4439888cd197641893723c22faf6fd05} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/admin/register HTTP/1.1" 3002060.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/admin/api/admin_info/v1.(*adminInfoClient).Register
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/admin/api/admin_info/v1/admin_info_grpc.pb.go:58
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_register.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-13 01:18:48.639 {544bac2f2a976418f3128c4e6c98dc1d} 公众号：王中阳：gateway-admin service deregister: &{Service:0xc0002bb340 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-13 01:19:06.754 {a4e495269b986418866b27586e5bc10c} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/admin/register HTTP/1.1" 38755.400, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 52, "", ""
+Stack:
+1. AdminInfo Register 注册失败: 用户名已存在
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/admin/api/admin_info/v1.(*adminInfoClient).Register
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/admin/api/admin_info/v1/admin_info_grpc.pb.go:58
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_register.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-13 01:21:08.057 {bcb8a74a97986418a614e22a6a6fd321} 公众号：王中阳：gateway-admin service deregister: &{Service:0xc0000ba150 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
