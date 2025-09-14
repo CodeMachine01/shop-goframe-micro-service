@@ -28,7 +28,6 @@ func JWTAuth(r *ghttp.Request) {
 		r.SetError(gerror.NewCode(gcode.CodeNotAuthorized, "无效Token"))
 		return
 	}
-
 	//将用户ID注入上下文
 	r.SetCtxVar(CtxUserId, claims.UserId)
 	//调用下一个中间件或最终处理程序

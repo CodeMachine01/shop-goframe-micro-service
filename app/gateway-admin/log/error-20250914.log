@@ -1,0 +1,91 @@
+2025-09-14 22:35:06.755 {241d3031d12c651881d3c24f7a4dec78} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/upload/image HTTP/1.1" 212832.100, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无法获取用户ID
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/file.(*ControllerV1).UploadImage
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/file/file_v1_upload_image.go:45
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:35:17.087 {4814d9f2d22c651882d3c24f60d858ee} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/admin/login HTTP/1.1" 3000771.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:26
+2. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/admin/api/admin_info/v1.(*adminInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/admin/api/admin_info/v1/admin_info_grpc.pb.go:48
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:21
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:35:46.022 {3c0f72afd92c651883d3c24ffa239814} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/admin/login HTTP/1.1" 3001442.400, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:26
+2. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/admin/api/admin_info/v1.(*adminInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/admin/api/admin_info/v1/admin_info_grpc.pb.go:48
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:21
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:37:57.058 {6c5ca1d9f82c651885d3c24fd480ecb7} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/upload/image HTTP/1.1" 185275.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无法获取用户ID
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/file.(*ControllerV1).UploadImage
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/file/file_v1_upload_image.go:45
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:38:40.049 {e02b6be0022d651887d3c24f091eef44} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/upload/image HTTP/1.1" 113450.500, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无法获取用户ID
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/file.(*ControllerV1).UploadImage
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/file/file_v1_upload_image.go:45
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:41:08.195 {64e8745a252d651889d3c24fdb9d0211} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/upload/image HTTP/1.1" 182577.400, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无法获取用户ID
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/file.(*ControllerV1).UploadImage
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/file/file_v1_upload_image.go:45
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:42:59.471 {8cd99b413f2d65188ad3c24fdcf68029} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/upload/image HTTP/1.1" 206712.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无法获取用户ID
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/file.(*ControllerV1).UploadImage
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/file/file_v1_upload_image.go:45
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:43:39.285 {c86dd68c482d65188bd3c24f2d0981ee} 公众号：王中阳：gateway-admin 200 "POST http 127.0.0.1:8299 /backend/upload/image HTTP/1.1" 103219.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 无法获取用户ID
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/file.(*ControllerV1).UploadImage
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/file/file_v1_upload_image.go:45
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-14 22:44:25.096 {84702c56cf2c65181ecff15613d918cc} 公众号：王中阳：gateway-admin service deregister: &{Service:0xc0003fc150 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
