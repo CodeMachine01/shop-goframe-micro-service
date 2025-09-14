@@ -1,0 +1,12 @@
+2025-09-15T00:59:53 [DEBU] {287f1f25b73465188051136ed15e23d0} user-service service register: &{Head: Deployment: Namespace: Name:user Version: Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-15T00:59:53 [INFO] {287f1f25b73465188051136ed15e23d0} user-service pid[217264]: grpc server started listening on [:31001]
+2025-09-15T01:11:55 [INFO] user-service signal received: interrupt, gracefully shutting down
+2025-09-15T01:11:55 [DEBU] {287f1f25b73465188051136ed15e23d0} user-service service deregister: &{Service:0xc0000ba700 Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-15T02:00:45 [DEBU] {34249b840938651876a46a2240981db6} user-service service register: &{Head: Deployment: Namespace: Name:user Version: Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-15T02:00:45 [INFO] {34249b840938651876a46a2240981db6} user-service pid[489192]: grpc server started listening on [:31001]
+2025-09-15T02:58:39 [INFO] user-service signal received: interrupt, gracefully shutting down
+2025-09-15T02:58:39 [DEBU] {34249b840938651876a46a2240981db6} user-service service deregister: &{Service:0xc000298070 Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-15T02:59:04 [DEBU] {4c7c7049383b65184c86b76f5ff5fb25} user-service service register: &{Head: Deployment: Namespace: Name:user Version: Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-15T02:59:04 [INFO] {4c7c7049383b65184c86b76f5ff5fb25} user-service pid[631588]: grpc server started listening on [:31001]
+2025-09-15T02:59:28 [INFO] user-service signal received: interrupt, gracefully shutting down
+2025-09-15T02:59:28 [DEBU] {4c7c7049383b65184c86b76f5ff5fb25} user-service service deregister: &{Service:0xc0000ba150 Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}

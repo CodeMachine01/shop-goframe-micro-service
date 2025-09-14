@@ -1,0 +1,2 @@
+2025-09-15T01:00:04 [ERRO] {2c7d1048ba346518e5d2586502eaa40e} user-service /user_info.UserInfo/Login, 24.050ms, 52, "UserInfo Login 登录失败: 密码错误", name:"cph"  password:"13456", <nil>, -1, "", "", rpc error: code = Code(52) desc = UserInfo Login 登录失败: 密码错误
+2025-09-15T01:00:17 [ERRO] {6caeb272bd346518e6d258651040f294} user-service /user_info.UserInfo/Login, 2.760ms, 52, "UserInfo Login 登录失败: 密码错误", name:"cph"  password:"123456", <nil>, -1, "", "", rpc error: code = Code(52) desc = UserInfo Login 登录失败: 密码错误

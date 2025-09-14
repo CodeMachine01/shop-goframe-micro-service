@@ -1,0 +1,285 @@
+2025-09-15 00:46:36.929 [INFO] {283e5ca2fd33651847901228edccdd09} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-15 00:46:36.930 [INFO] 公众号：王中阳：gateway-admin pid[163252]: http server started listening on [:8299]
+2025-09-15 00:46:36.931 [INFO] {283e5ca2fd33651847901228edccdd09} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-15 00:46:36.976 [DEBU] {283e5ca2fd33651847901228edccdd09} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                  HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                              | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                     |                                 |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin     | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/upload/image   | shop-goframe-micro-service/app/gateway-admin/api/file.IFileV1.UploadImage                                 | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                       | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-15 01:12:07.898 [DEBU] {283e5ca2fd33651847901228edccdd09} 公众号：王中阳：gateway-admin service deregister: &{Service:0xc0003a8690 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-15 01:29:46.403 [INFO] {f49f50af583665189f42d30951e6f8b3} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-15 01:29:46.404 [INFO] 公众号：王中阳：gateway-admin pid[356780]: http server started listening on [:8299]
+2025-09-15 01:29:46.404 [INFO] {f49f50af583665189f42d30951e6f8b3} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-15 01:29:46.453 [DEBU] {f49f50af583665189f42d30951e6f8b3} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                  HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                              | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                     |                                 |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin     | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/upload/image   | shop-goframe-micro-service/app/gateway-admin/api/file.IFileV1.UploadImage                                 | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                       | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-15 01:40:28.988 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-15 01:40:28.988 [INFO] 公众号：王中阳：gateway-admin pid[379872]: http server started listening on [:8299]
+2025-09-15 01:40:28.989 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-15 01:40:29.035 [DEBU] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                  HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                              | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                     |                                 |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin     | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList   | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/upload/image   | shop-goframe-micro-service/app/gateway-admin/api/file.IFileV1.UploadImage                                 | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                       | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-15 01:40:34.032 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-15 01:40:34.033 [INFO] 公众号：王中阳：gateway-admin pid[398924]: http server started listening on [:8299]
+2025-09-15 01:40:34.033 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-15 01:40:34.092 [DEBU] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                  HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                              | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                     |                                 |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin     | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList   | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/upload/image   | shop-goframe-micro-service/app/gateway-admin/api/file.IFileV1.UploadImage                                 | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                       | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-15 01:40:52.856 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-15 01:40:52.857 [INFO] 公众号：王中阳：gateway-admin pid[398800]: http server started listening on [:8299]
+2025-09-15 01:40:52.857 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-15 01:40:52.900 [DEBU] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                 HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                             | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                    |                                 |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/upload/image   | shop-goframe-micro-service/app/gateway-admin/api/file.IFileV1.UploadImage                                | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                          | middleware.JWTAuth              |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                      | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-15 01:42:42.671 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-15 01:42:42.671 [INFO] 公众号：王中阳：gateway-admin pid[411776]: http server started listening on [:8299]
+2025-09-15 01:42:42.671 [INFO] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-15 01:42:42.720 [DEBU] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                  HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                              | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                     |                                 |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin     | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/upload/image   | shop-goframe-micro-service/app/gateway-admin/api/file.IFileV1.UploadImage                                 | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                       | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-15 01:45:12.366 [DEBU] {e46da43eee36651818e8cd0435f8d9a9} 公众号：王中阳：gateway-admin service deregister: &{Service:0xc0002bc460 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-15 01:58:18.788 [INFO] {841adb61e7376518b257636ef0f70864} 公众号：王中阳：gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-15 01:58:18.789 [INFO] 公众号：王中阳：gateway-admin pid[473372]: http server started listening on [:8299]
+2025-09-15 01:58:18.789 [INFO] {841adb61e7376518b257636ef0f70864} 公众号：王中阳：gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-15 01:58:18.835 [DEBU] {841adb61e7376518b257636ef0f70864} 公众号：王中阳：gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                  HANDLER                                                  |           MIDDLEWARE            |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                              | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                     |                                 |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin     | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister  | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/upload/image   | shop-goframe-micro-service/app/gateway-admin/api/file.IFileV1.UploadImage                                 | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                           | middleware.JWTAuth              |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                       | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-15 03:03:24.682 [DEBU] {841adb61e7376518b257636ef0f70864} 公众号：王中阳：gateway-admin service deregister: &{Service:0xc0002a4310 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}

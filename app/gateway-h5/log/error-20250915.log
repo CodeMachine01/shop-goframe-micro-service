@@ -1,0 +1,311 @@
+2025-09-15T00:57:27 {842b8ffc94346518e1d25865ad9d1846} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/login HTTP/1.1" 3003348.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:27
+2. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:54
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:22
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T00:57:53 {0c66af279b346518e2d258654df7d077} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/login HTTP/1.1" 3000928.700, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:27
+2. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:54
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:22
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T00:58:04 {5c0456679e346518e3d2586525684849} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/register HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+用户名不能为空
+2025-09-15T00:58:42 {e4888a9ba6346518e4d25865938e7086} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/register HTTP/1.1" 3000315.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Register
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:64
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoRegister
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_register.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T01:00:04 {2c7d1048ba346518e5d2586502eaa40e} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/login HTTP/1.1" 34949.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:27
+2. UserInfo Login 登录失败: 密码错误
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:54
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:22
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T01:00:17 {6caeb272bd346518e6d258651040f294} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/login HTTP/1.1" 3864.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:27
+2. UserInfo Login 登录失败: 密码错误
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:54
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:22
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T01:28:46 {f49cd343503465188538645c4bc3f6f2} gateway-h5 service deregister: &{Service:0xc000580000 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
+2025-09-15T01:46:27 {ec81b680413765188ec5d472d5e06d66} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods?page=1&size=10 HTTP/1.1" 3003106.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:57
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T01:48:32 {b0fc46c65e3765188fc5d472acff6b7b} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods?page=1&size=10 HTTP/1.1" 3000453.100, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:57
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T01:49:07 {305aa6693d376518cfbe985dca374896} gateway-h5 service deregister: &{Service:0xc0002be000 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
+2025-09-15T01:51:59 {64469de78e376518e6e74674081a2006} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods/images?page=1&size=10 HTTP/1.1" 3001906.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_images/v1.(*goodsImagesClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_images/v1/goods_images_grpc.pb.go:51
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsImagesGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_images_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T01:56:19 {889ba041683765185306345c7914eede} gateway-h5 service deregister: &{Service:0xc0005113b0 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
+2025-09-15T01:57:04 {1c30a9f7d537651883df4462abf7bb8e} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods?page=1&size=10 HTTP/1.1" 3001975.600, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:57
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T01:58:35 {081b541feb37651884df4462bedb4610} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods?page=1&size=10 HTTP/1.1" 3000953.300, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:57
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T02:00:21 {685521e00338651885df446249d824bb} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/login HTTP/1.1" 3000993.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:27
+2. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:54
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:22
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T02:00:55 {d01c18660c38651887df44625d9c9378} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods?page=1&size=10 HTTP/1.1" 522.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 12, "", ""
+Stack:
+1. unknown service goods_info.v1.goods_info
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:57
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T02:01:37 {105e1f331638651888df4462fde296af} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods/detail?id=1 HTTP/1.1" 1002.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 12, "", ""
+Stack:
+1. unknown service goods_info.v1.goods_info
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:67
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_detail.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T02:24:32 {10eda715d1376518ca6c7a63f10a29f0} gateway-h5 service deregister: &{Service:0xc0000bb2d0 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
+2025-09-15T02:24:39 {f44d71d957396518d7e98028d513a6da} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods/detail?id=1 HTTP/1.1" 5823.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 12, "", ""
+Stack:
+1. unknown service goods_info.v1.goods_info
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:67
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_detail.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T02:26:49 {bc1f5f5676396518f7862a500b24c0a3} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods/detail?id=1 HTTP/1.1" 6052.700, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 12, "", ""
+Stack:
+1. unknown service goods_info.v1.goods_info
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:67
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_info_get_detail.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15T02:33:26 {ecccd2c056396518247f0e557a98d0bf} gateway-h5 service deregister: &{Service:0xc000338000 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
+2025-09-15T02:34:40 {b8f468fee339651846ab922a0b6a9300} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/goods/images?page=1&size=10 HTTP/1.1" 6000.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 12, "", ""
+Stack:
+1. unknown service goods_images.v1.goods_images
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_images/v1.(*goodsImagesClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_images/v1/goods_images_grpc.pb.go:51
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/goods.(*ControllerV1).GoodsImagesGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/goods/goods_v1_goods_images_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+

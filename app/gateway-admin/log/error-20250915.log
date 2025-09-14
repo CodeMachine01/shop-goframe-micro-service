@@ -1,0 +1,66 @@
+2025-09-15 01:33:15.798 {00f39b4789366518d3d5c04b98d03f1e} 公众号：王中阳：gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods?page=1&size=10 HTTP/1.1" 3000454.500, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:57
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   8).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 01:35:07.112 {702550e5a3366518d4d5c04bd1d7f087} 公众号：王中阳：gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=1 HTTP/1.1" 534.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 01:35:24.009 {bce29821a7366518d5d5c04ba86e7301} 公众号：王中阳：gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=1 HTTP/1.1" 3000323.700, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:67
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_detail.go:19
+   7).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   8).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 01:40:40.954 {bcaae8ecf036651807512e3f4f451162} 公众号：王中阳：gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=1 HTTP/1.1" 3001565.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:67
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_detail.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+

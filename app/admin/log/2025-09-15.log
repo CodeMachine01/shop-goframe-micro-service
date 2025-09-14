@@ -1,0 +1,7 @@
+2025-09-15 00:47:20.100 [DEBU] {6c2514d807346518ea97553b87973f36} 公众号：王中阳：admin-service service register: &{Head: Deployment: Namespace: Name:admin Version: Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}
+2025-09-15 00:47:20.110 [INFO] {6c2514d807346518ea97553b87973f36} 公众号：王中阳：admin-service pid[154628]: grpc server started listening on [:31003]
+2025-09-15 01:12:11.222 [INFO] 公众号：王中阳：admin-service signal received: interrupt, gracefully shutting down
+2025-09-15 01:12:11.223 [DEBU] {6c2514d807346518ea97553b87973f36} 公众号：王中阳：admin-service service deregister: &{Service:0xc0000ba4d0 Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}
+2025-09-15 01:29:42.184 [DEBU] {bce1f9c057366518075e305516bdd022} 公众号：王中阳：admin-service service register: &{Head: Deployment: Namespace: Name:admin Version: Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}
+2025-09-15 01:29:42.194 [INFO] {bce1f9c057366518075e305516bdd022} 公众号：王中阳：admin-service pid[349404]: grpc server started listening on [:31003]
+2025-09-15 01:45:14.280 [INFO] 公众号：王中阳：admin-service signal received: interrupt, gracefully shutting down
