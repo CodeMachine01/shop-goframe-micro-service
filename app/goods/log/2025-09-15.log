@@ -44,3 +44,15 @@ Stack:
 2025-09-15T15:30:04 [INFO] {8cfad178336465186fa5dc20e65968d2} goods-service pid[1197664]: grpc server started listening on [:31004]
 2025-09-15T16:14:31 [INFO] goods-service signal received: interrupt, gracefully shutting down
 2025-09-15T16:14:31 [DEBU] {8cfad178336465186fa5dc20e65968d2} goods-service service deregister: &{Service:0xc000350230 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T21:00:08 [DEBU] {0865900a317665183394363b54cdf8a3} goods-service service register: &{Head: Deployment: Namespace: Name:goods Version: Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T21:00:08 [INFO] {0865900a317665183394363b54cdf8a3} goods-service pid[186220]: grpc server started listening on [:31004]
+2025-09-15T21:09:38 [INFO] goods-service signal received: interrupt, gracefully shutting down
+2025-09-15T21:09:38 [DEBU] {0865900a317665183394363b54cdf8a3} goods-service service deregister: &{Service:0xc00014caf0 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T21:09:43 [DEBU] {ac071671bc76651888f2573cc9a587e7} goods-service service register: &{Head: Deployment: Namespace: Name:goods Version: Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T21:09:43 [INFO] {ac071671bc76651888f2573cc9a587e7} goods-service pid[226164]: grpc server started listening on [:31004]
+2025-09-15T21:14:14 [INFO] goods-service signal received: interrupt, gracefully shutting down
+2025-09-15T21:14:14 [DEBU] {ac071671bc76651888f2573cc9a587e7} goods-service service deregister: &{Service:0xc00033eb60 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T21:14:18 [DEBU] {e0e29c72fc766518e1459109925c15ef} goods-service service register: &{Head: Deployment: Namespace: Name:goods Version: Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T21:14:18 [INFO] {e0e29c72fc766518e1459109925c15ef} goods-service pid[224456]: grpc server started listening on [:31004]
+2025-09-15T21:16:24 [INFO] goods-service signal received: interrupt, gracefully shutting down
+2025-09-15T21:16:24 [DEBU] {e0e29c72fc766518e1459109925c15ef} goods-service service deregister: &{Service:0xc0002a0070 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}

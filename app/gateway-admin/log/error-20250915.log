@@ -151,3 +151,64 @@ Stack:
         D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
 
 2025-09-15 16:14:41.719 {188d22fe39646518578cfe4a86e7ebf7} gateway-admin service deregister: &{Service:0xc0002e7b90 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-15 21:05:10.275 {986b08377d766518461c8f5de420d5af} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=4 HTTP/1.1" 551144.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 53, "Invalid Parameter", ""
+Stack:
+1. convert params from "(*pbentity.GoodsInfo)(nil)" to "map[string]any" failed
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_detail.go:27
+   2).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   3).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 21:08:01.389 {88de262ea5766518471c8f5db16a567a} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=4 HTTP/1.1" 15576.600, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 53, "Invalid Parameter", ""
+Stack:
+1. convert params from "(*pbentity.GoodsInfo)(nil)" to "map[string]any" failed
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_detail.go:27
+   2).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   3).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 21:08:41.378 {b4e2ca7dae766518481c8f5d03bb8931} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=4 HTTP/1.1" 13459.600, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 53, "Invalid Parameter", ""
+Stack:
+1. convert params from "(*pbentity.GoodsInfo)(nil)" to "map[string]any" failed
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_detail.go:27
+   2).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   3).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 21:14:41.581 {2413535b027765184a1c8f5d98ccaf1a} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=4 HTTP/1.1" 17996.300, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 53, "Invalid Parameter", ""
+Stack:
+1. convert params from "(*pbentity.GoodsInfo)(nil)" to "map[string]any" failed
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_detail.go:27
+   2).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   3).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 21:14:44.165 {dc4e46f6027765184b1c8f5d3699442c} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=4 HTTP/1.1" 2055.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 2, "", ""
+Stack:
+1. 商品不存在
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/goods/api/goods_info/v1.(*goodsInfoClient).GetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/api/goods_info/v1/goods_info_grpc.pb.go:67
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/goods/goods_v1_goods_info_get_detail.go:19
+   7).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   8).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 21:16:29.702 {3472ffff2e76651821057348bc064bac} gateway-admin service deregister: &{Service:0xc0002c2690 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
