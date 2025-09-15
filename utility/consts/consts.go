@@ -11,6 +11,7 @@ const (
 	UpdatePasswordFail = "UpdatePassword 修改密码失败"
 	GetUserInfoFail    = "GetUserInfo 获取用户信息失败"
 	UploadImageFail    = "UploadImage 图片保存失败"
+	SearchFail         = "SearchFail 搜索失败"
 	GoodsImages        = "GoodsImages"
 	GoodsInfo          = "GoodsInfo"
 	CategoryInfo       = "CategoryInfo"
@@ -21,6 +22,7 @@ const (
 	CommentInfo        = "CommentInfo"
 	PraiseInfo         = "PraiseInfo"
 	AdminInfo          = "AdminInfo"
+	SearchGoods        = "SearchGoods"
 )
 
 func InfoError(info string, fail string) string {
