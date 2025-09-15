@@ -26,3 +26,108 @@
 ----------|--------|---------------|----------------------------------------------------------------------------------------------|----------------------------------
 
 2025-09-16 01:39:04.106 [INFO] 公众号：王中阳：search-service pid[976444]: all servers shutdown
+2025-09-16 02:48:52.245 [INFO] {484468313c8965189496fb5e40375868} 公众号：王中阳：search-service swagger ui is serving at address: http://127.0.0.1:8499/swagger/
+2025-09-16 02:48:52.246 [INFO] 公众号：王中阳：search-service pid[1264648]: http server started listening on [:8499]
+2025-09-16 02:48:52.246 [INFO] {484468313c8965189496fb5e40375868} 公众号：王中阳：search-service openapi specification is serving at address: http://127.0.0.1:8499/api.json
+
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |     ROUTE     |                                HANDLER                                 |           MIDDLEWARE            |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /api.json     | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                  |                                 |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | GET    | /search/goods | shop-goframe-micro-service/app/search/api/search.ISearchV1.SearchGoods | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /swagger/*    | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                    | HOOK_BEFORE_SERVE               |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+
+2025-09-16 02:56:08.347 [INFO] 公众号：王中阳：search-service pid[1264648]: all servers shutdown
+2025-09-16 03:02:24.441 [INFO] {b86b615efb8965186d24df4fa00d7849} 公众号：王中阳：search-service swagger ui is serving at address: http://127.0.0.1:8499/swagger/
+2025-09-16 03:02:24.441 [INFO] 公众号：王中阳：search-service pid[1302044]: http server started listening on [:8499]
+2025-09-16 03:02:24.441 [INFO] {b86b615efb8965186d24df4fa00d7849} 公众号：王中阳：search-service openapi specification is serving at address: http://127.0.0.1:8499/api.json
+
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |     ROUTE     |                                HANDLER                                 |           MIDDLEWARE            |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /api.json     | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                  |                                 |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | GET    | /search/goods | shop-goframe-micro-service/app/search/api/search.ISearchV1.SearchGoods | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /swagger/*    | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                    | HOOK_BEFORE_SERVE               |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+
+2025-09-16 03:05:00.719 [INFO] 公众号：王中阳：search-service pid[1302044]: all servers shutdown
+2025-09-16 03:05:05.057 [INFO] {10a44abf208a6518e001131a807b4e1d} 公众号：王中阳：search-service swagger ui is serving at address: http://127.0.0.1:8499/swagger/
+2025-09-16 03:05:05.058 [INFO] 公众号：王中阳：search-service pid[1336004]: http server started listening on [:8499]
+2025-09-16 03:05:05.058 [INFO] {10a44abf208a6518e001131a807b4e1d} 公众号：王中阳：search-service openapi specification is serving at address: http://127.0.0.1:8499/api.json
+
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |     ROUTE     |                                HANDLER                                 |           MIDDLEWARE            |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /api.json     | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                  |                                 |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | GET    | /search/goods | shop-goframe-micro-service/app/search/api/search.ISearchV1.SearchGoods | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /swagger/*    | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                    | HOOK_BEFORE_SERVE               |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+
+2025-09-16 03:15:20.558 [INFO] 公众号：王中阳：search-service pid[1336004]: all servers shutdown
+2025-09-16 03:15:24.905 [INFO] {183e4703b18a651886f8ac7d59818e6d} 公众号：王中阳：search-service swagger ui is serving at address: http://127.0.0.1:8499/swagger/
+2025-09-16 03:15:24.905 [INFO] 公众号：王中阳：search-service pid[1372368]: http server started listening on [:8499]
+2025-09-16 03:15:24.905 [INFO] {183e4703b18a651886f8ac7d59818e6d} 公众号：王中阳：search-service openapi specification is serving at address: http://127.0.0.1:8499/api.json
+
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |     ROUTE     |                                HANDLER                                 |           MIDDLEWARE            |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /api.json     | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                  |                                 |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | GET    | /search/goods | shop-goframe-micro-service/app/search/api/search.ISearchV1.SearchGoods | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /swagger/*    | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                    | HOOK_BEFORE_SERVE               |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+
+2025-09-16 03:15:53.365 [INFO] 公众号：王中阳：search-service pid[1372368]: all servers shutdown
+2025-09-16 03:16:06.739 [INFO] {e8cc30deba8a6518c3952566c90b3bed} 公众号：王中阳：search-service swagger ui is serving at address: http://127.0.0.1:8499/swagger/
+2025-09-16 03:16:06.739 [INFO] 公众号：王中阳：search-service pid[1374528]: http server started listening on [:8499]
+2025-09-16 03:16:06.739 [INFO] {e8cc30deba8a6518c3952566c90b3bed} 公众号：王中阳：search-service openapi specification is serving at address: http://127.0.0.1:8499/api.json
+
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |     ROUTE     |                                HANDLER                                 |           MIDDLEWARE            |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /api.json     | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                  |                                 |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | GET    | /search/goods | shop-goframe-micro-service/app/search/api/search.ISearchV1.SearchGoods | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /swagger/*    | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                    | HOOK_BEFORE_SERVE               |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+
+2025-09-16 03:22:35.339 [INFO] 公众号：王中阳：search-service pid[1374528]: all servers shutdown
+2025-09-16 03:22:56.247 [INFO] {bc930c171a8b6518427ae87de969ba8d} 公众号：王中阳：search-service swagger ui is serving at address: http://127.0.0.1:8499/swagger/
+2025-09-16 03:22:56.247 [INFO] 公众号：王中阳：search-service pid[1320284]: http server started listening on [:8499]
+2025-09-16 03:22:56.248 [INFO] {bc930c171a8b6518427ae87de969ba8d} 公众号：王中阳：search-service openapi specification is serving at address: http://127.0.0.1:8499/api.json
+
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |     ROUTE     |                                HANDLER                                 |           MIDDLEWARE            |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /api.json     | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                  |                                 |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | GET    | /search/goods | shop-goframe-micro-service/app/search/api/search.ISearchV1.SearchGoods | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /swagger/*    | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                    | HOOK_BEFORE_SERVE               |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+
+2025-09-16 03:26:52.550 [INFO] 公众号：王中阳：search-service pid[1320284]: all servers shutdown
+2025-09-16 03:31:21.428 [INFO] {449613c48f8b65189fc9ac265dafc0d5} 公众号：王中阳：search-service swagger ui is serving at address: http://127.0.0.1:8499/swagger/
+2025-09-16 03:31:21.428 [INFO] 公众号：王中阳：search-service pid[1418972]: http server started listening on [:8499]
+2025-09-16 03:31:21.428 [INFO] {449613c48f8b65189fc9ac265dafc0d5} 公众号：王中阳：search-service openapi specification is serving at address: http://127.0.0.1:8499/api.json
+
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |     ROUTE     |                                HANDLER                                 |           MIDDLEWARE            |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /api.json     | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                  |                                 |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | GET    | /search/goods | shop-goframe-micro-service/app/search/api/search.ISearchV1.SearchGoods | ghttp.MiddlewareHandlerResponse |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+| :8499   | ALL    | /swagger/*    | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                    | HOOK_BEFORE_SERVE               |
+----------|--------|---------------|------------------------------------------------------------------------|----------------------------------
+
+2025-09-16 03:32:47.796 [INFO] 公众号：王中阳：search-service pid[1418972]: all servers shutdown

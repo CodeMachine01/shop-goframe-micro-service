@@ -19,7 +19,7 @@ var (
 			s.Group("/", func(group *ghttp.RouterGroup) {
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Bind(
-					search.NewV1(),
+					search.NewV1().SearchGoods,
 				)
 			})
 			s.Run()
