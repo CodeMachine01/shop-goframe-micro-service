@@ -13,6 +13,7 @@ const (
 	UploadImageFail    = "UploadImage 图片保存失败"
 	GoodsImages        = "GoodsImages"
 	GoodsInfo          = "GoodsInfo"
+	CategoryInfo       = "CategoryInfo"
 	FileInfo           = "FileInfo"
 	ConsigneeInfo      = "ConsigneeInfo"
 	UserInfo           = "UserInfo"

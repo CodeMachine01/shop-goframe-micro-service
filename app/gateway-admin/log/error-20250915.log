@@ -212,3 +212,36 @@ Stack:
         D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
 
 2025-09-15 21:16:29.702 {3472ffff2e76651821057348bc064bac} gateway-admin service deregister: &{Service:0xc0002c2690 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-15 23:35:44.406 {583903c4b47e6518f1273402090091ec} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/category?sort=1&page=1&size=10 HTTP/1.1" 523.400, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 23:36:33.989 {2454714fc07e6518f3273402bc1cb166} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/category/all HTTP/1.1" 275.100, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 23:37:24.990 {cc60532fcc7e6518f6273402740210d1} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/goods/detail?id=1 HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 23:38:28.909 {087f2111db7e6518f82734028ee8b5d5} gateway-admin 200 "PUT http 127.0.0.1:8299 /backend/goods HTTP/1.1" 1028.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 23:39:09.362 {383cbae6ac7e651884bc823bc5dd405d} gateway-admin service deregister: &{Service:0xc00029eaf0 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}

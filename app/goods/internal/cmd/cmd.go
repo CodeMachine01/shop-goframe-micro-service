@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/gogf/gf/contrib/rpc/grpcx/v2"
 	"google.golang.org/grpc"
+	"shop-goframe-micro-service/app/goods/internal/controller/category_info"
 	"shop-goframe-micro-service/app/goods/internal/controller/goods_images"
 	"shop-goframe-micro-service/app/goods/internal/controller/goods_info"
 
@@ -23,6 +24,7 @@ var (
 			s := grpcx.Server.New(c)
 			goods_info.Register(s)
 			goods_images.Register(s)
+			category_info.Register(s)
 			s.Run()
 			return nil
 		},
