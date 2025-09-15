@@ -5,3 +5,11 @@
 2025-09-15 01:29:42.184 [DEBU] {bce1f9c057366518075e305516bdd022} 公众号：王中阳：admin-service service register: &{Head: Deployment: Namespace: Name:admin Version: Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}
 2025-09-15 01:29:42.194 [INFO] {bce1f9c057366518075e305516bdd022} 公众号：王中阳：admin-service pid[349404]: grpc server started listening on [:31003]
 2025-09-15 01:45:14.280 [INFO] 公众号：王中阳：admin-service signal received: interrupt, gracefully shutting down
+2025-09-15 10:14:08.194 [DEBU] {3ccf3feef552651832c30d59775825c9} 公众号：王中阳：admin-service service register: &{Head: Deployment: Namespace: Name:admin Version: Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}
+2025-09-15 10:14:08.205 [INFO] {3ccf3feef552651832c30d59775825c9} 公众号：王中阳：admin-service pid[133688]: grpc server started listening on [:31003]
+2025-09-15 10:15:45.128 [INFO] 公众号：王中阳：admin-service signal received: interrupt, gracefully shutting down
+2025-09-15 10:15:45.128 [DEBU] {3ccf3feef552651832c30d59775825c9} 公众号：王中阳：admin-service service deregister: &{Service:0xc0000ba540 Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}
+2025-09-15 15:33:33.454 [DEBU] {f0e79c44646465181e80a000ad54d94b} 公众号：王中阳：admin-service service register: &{Head: Deployment: Namespace: Name:admin Version: Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}
+2025-09-15 15:33:33.466 [INFO] {f0e79c44646465181e80a000ad54d94b} 公众号：王中阳：admin-service pid[1159264]: grpc server started listening on [:31003]
+2025-09-15 16:14:34.409 [INFO] 公众号：王中阳：admin-service signal received: interrupt, gracefully shutting down
+2025-09-15 16:14:34.410 [DEBU] {f0e79c44646465181e80a000ad54d94b} 公众号：王中阳：admin-service service deregister: &{Service:0xc00033e070 Endpoints:192.168.190.1:31003,192.168.72.1:31003,172.30.103.68:31003,172.29.208.1:31003,172.17.144.1:31003 Metadata:map[protocol:grpc]}

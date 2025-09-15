@@ -13,7 +13,8 @@ import (
 type GoodsInfo struct {
 	g.Meta           `orm:"table:goods_info, do:true"`
 	Id               any         //
-	Name             any         //
+	Name             any         // 商品名字
+	Images           any         // 支持单图,多图
 	Price            any         // 价格(分)
 	Level1CategoryId any         // 1级分类id
 	Level2CategoryId any         // 2级分类id

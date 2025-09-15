@@ -3,7 +3,6 @@ package cmd
 import (
 	"context"
 	"shop-goframe-micro-service/app/gateway-admin/internal/controller/admin"
-	"shop-goframe-micro-service/app/gateway-admin/internal/controller/file"
 	"shop-goframe-micro-service/app/gateway-admin/internal/controller/goods"
 	"shop-goframe-micro-service/utility/middleware"
 
@@ -31,7 +30,6 @@ var (
 					group.Middleware(middleware.JWTAuth)
 					group.Bind(
 						//需要认证的接口
-						file.NewV1().UploadImage,
 						goods.NewV1(),
 					)
 				})

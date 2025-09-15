@@ -18,3 +18,29 @@
 2025-09-15T01:48:57 [DEBU] {c477111a4e366518280421036b07e8a9} goods-service service deregister: &{Service:0xc00033c1c0 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
 2025-09-15T01:49:01 [DEBU] {8c6675a565376518ae2486144cfefa38} goods-service service register: &{Head: Deployment: Namespace: Name:goods Version: Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
 2025-09-15T01:49:01 [INFO] {8c6675a565376518ae2486144cfefa38} goods-service pid[440084]: grpc server started listening on [:31004]
+2025-09-15T10:09:51 [DEBU] {8c6675a565376518ae2486144cfefa38} goods-service service register: &{Head: Deployment: Namespace: Name:goods Version: Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T10:09:51 [INFO] {8c6675a565376518ae2486144cfefa38} goods-service pid[109504]: grpc server started listening on [:31004]
+2025-09-15T10:11:04 [FATA] {ec90b890c352651802d03246e090161d} goods-service listen tcp :31004: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+Stack:
+1.  shop-goframe-micro-service/app/goods/internal/cmd.init.func1
+    D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/internal/cmd/cmd.go:26
+2.  main.main
+    D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/main.go:23
+
+2025-09-15T10:11:25 [FATA] {a4a4841ed0526518d886324e058d7071} goods-service listen tcp :31004: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted. 
+Stack:
+1.  shop-goframe-micro-service/app/goods/internal/cmd.init.func1
+    D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/internal/cmd/cmd.go:26
+2.  main.main
+    D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/goods/main.go:23
+
+2025-09-15T10:12:34 [INFO] goods-service signal received: interrupt, gracefully shutting down
+2025-09-15T10:12:34 [DEBU] {8c6675a565376518ae2486144cfefa38} goods-service service deregister: &{Service:0xc000350070 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T10:12:46 [DEBU] {a0b20afee252651813810814f6b66c4c} goods-service service register: &{Head: Deployment: Namespace: Name:goods Version: Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T10:12:46 [INFO] {a0b20afee252651813810814f6b66c4c} goods-service pid[6220]: grpc server started listening on [:31004]
+2025-09-15T10:15:40 [INFO] goods-service signal received: interrupt, gracefully shutting down
+2025-09-15T10:15:40 [DEBU] {a0b20afee252651813810814f6b66c4c} goods-service service deregister: &{Service:0xc0000ba230 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T15:30:04 [DEBU] {8cfad178336465186fa5dc20e65968d2} goods-service service register: &{Head: Deployment: Namespace: Name:goods Version: Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}
+2025-09-15T15:30:04 [INFO] {8cfad178336465186fa5dc20e65968d2} goods-service pid[1197664]: grpc server started listening on [:31004]
+2025-09-15T16:14:31 [INFO] goods-service signal received: interrupt, gracefully shutting down
+2025-09-15T16:14:31 [DEBU] {8cfad178336465186fa5dc20e65968d2} goods-service service deregister: &{Service:0xc000350230 Endpoints:192.168.190.1:31004,192.168.72.1:31004,172.30.103.68:31004,172.29.208.1:31004,172.17.144.1:31004 Metadata:map[protocol:grpc]}

@@ -20,6 +20,7 @@ message GoodsImagesCreateReq {
   uint32  GoodsId = 1; // 商品ID
   uint32  FileId  = 2; // 文件ID（关联file_info）
   uint32  Sort    = 3; // 排序
+  string Url     = 4; // 七牛云url
 }
 
 message GoodsImagesCreateRes {

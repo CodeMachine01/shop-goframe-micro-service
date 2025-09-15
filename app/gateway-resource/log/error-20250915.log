@@ -1,0 +1,30 @@
+2025-09-15 10:55:09.912 {9c6e2da833556518f1e1487ebdec2936} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 2109.600, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+上传者id不能为空
+2025-09-15 10:57:06.416 {e4785ec84e556518f2e1487eabafbc0b} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 521.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+上传者id不能为空
+2025-09-15 10:57:43.289 {0875282db5546518e83ffc64bae559f8} gateway-resource service deregister: &{Service:0xc0002a4000 Endpoints:192.168.190.1:8399,192.168.72.1:8399,172.30.103.68:8399,172.29.208.1:8399,172.17.144.1:8399 Metadata:map[insecure:true protocol:http]}
+2025-09-15 10:59:16.341 {f47368086d5565180890461ebb3b48bb} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 2187.400, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+上传者类型不能为空
+2025-09-15 10:59:30.514 {fca34955705565180990461e29401b98} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 1000.500, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+上传者类型不能为空
+2025-09-15 10:59:43.964 {5cf01d8a5b5565189b21c96b5b73ec3d} gateway-resource service deregister: &{Service:0xc000412000 Endpoints:192.168.190.1:8399,192.168.72.1:8399,172.30.103.68:8399,172.29.208.1:8399,172.17.144.1:8399 Metadata:map[insecure:true protocol:http]}
+2025-09-15 11:00:31.449 {7ca43a857e5565185f8a9530db04846e} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 1999.900, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+上传者id不能为空
+2025-09-15 11:02:24.150 {1807cbc298556518608a95302df58560} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 537.700, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+请选择上传文件
+2025-09-15 11:02:48.838 {c83e64829e556518618a953056b30c74} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 68, "Internal Panic", ""
+Stack:
+1. reflect.Value.Convert: value of type json.Number cannot be converted to type ghttp.UploadFile
+   1).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-15 11:03:57.627 {ccd07886ae556518628a9530bec9fc7d} gateway-resource 200 "POST http 127.0.0.1:8399 /upload/image HTTP/1.1" 550.100, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+上传者id不能为空
+2025-09-15 11:04:47.886 {545082c473556518a77bd23a5b59e5a6} gateway-resource service deregister: &{Service:0xc0002b0000 Endpoints:192.168.190.1:8399,192.168.72.1:8399,172.30.103.68:8399,172.29.208.1:8399,172.17.144.1:8399 Metadata:map[insecure:true protocol:http]}

@@ -29,6 +29,7 @@ type GoodsImagesCreateReq struct {
 	GoodsId       uint32                 `protobuf:"varint,1,opt,name=GoodsId,proto3" json:"GoodsId,omitempty" dc:"商品ID"`            // 商品ID
 	FileId        uint32                 `protobuf:"varint,2,opt,name=FileId,proto3" json:"FileId,omitempty" dc:"文件ID（关联file_info）"` // 文件ID（关联file_info）
 	Sort          uint32                 `protobuf:"varint,3,opt,name=Sort,proto3" json:"Sort,omitempty" dc:"排序"`                    // 排序
+	Url           string                 `protobuf:"bytes,4,opt,name=Url,proto3" json:"Url,omitempty" dc:"七牛云url"`                   // 七牛云url
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -82,6 +83,13 @@ func (x *GoodsImagesCreateReq) GetSort() uint32 {
 		return x.Sort
 	}
 	return 0
+}
+
+func (x *GoodsImagesCreateReq) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
 }
 
 type GoodsImagesCreateRes struct {
@@ -376,11 +384,12 @@ var File_goods_images_v1_goods_images_proto protoreflect.FileDescriptor
 
 const file_goods_images_v1_goods_images_proto_rawDesc = "" +
 	"\n" +
-	"\"goods_images/v1/goods_images.proto\x12\x0fgoods_images.v1\x1a\x1bpbentity/goods_images.proto\"\\\n" +
+	"\"goods_images/v1/goods_images.proto\x12\x0fgoods_images.v1\x1a\x1bpbentity/goods_images.proto\"n\n" +
 	"\x14GoodsImagesCreateReq\x12\x18\n" +
 	"\aGoodsId\x18\x01 \x01(\rR\aGoodsId\x12\x16\n" +
 	"\x06FileId\x18\x02 \x01(\rR\x06FileId\x12\x12\n" +
-	"\x04Sort\x18\x03 \x01(\rR\x04Sort\"&\n" +
+	"\x04Sort\x18\x03 \x01(\rR\x04Sort\x12\x10\n" +
+	"\x03Url\x18\x04 \x01(\tR\x03Url\"&\n" +
 	"\x14GoodsImagesCreateRes\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"&\n" +
 	"\x14GoodsImagesDeleteReq\x12\x0e\n" +
