@@ -71,7 +71,29 @@ docker exec -it elasticsearch /bin/bash
 安装完成后，退出容器  
 exit  
 重启elasticsearch  
-docker restart elasticsearch
+docker restart elasticsearch  
+
+# 安装RabiitMQ
+docker run -d ^  
+--name rabbitmq ^  
+-p 5672:5672 ^  
+-p 15672:15672 ^  
+-e RABBITMQ_DEFAULT_USER=root ^  
+-e RABBITMQ_DEFAULT_PASS=root ^  
+rabbitmq:4.1.0-management  
+插件下载地址  
+https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/compare/v4.1.0...v4.1.0  
+引入延迟插件  
+docker cp D:\MyPlugins\rabbitmq_delayed_message_exchange-4.1.0.ez  rabbitmq:/plugins  
+进入容器启用插件  
+docker exec -it rabbitmq bash  
+验证是否传输  
+ls /plugins | grep delayed  
+启用插件  
+rabbitmq-plugins enable rabbitmq_delayed_message_exchange  
+exit  
+重启容器使插件生效  
+docker restart rabbitmq
 
 # 微服务编写流程  
 初始化文件 gf init app/admin -a   
@@ -79,3 +101,4 @@ docker restart elasticsearch
 生成dao模型和pbentity模型  gf gen dao  gf gen pbentity
 创建接口proto  创建目录manifest/protobuf/admin_info/v1/admin_info.proto  
 生成控制器  gf gen pb
+
