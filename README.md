@@ -18,7 +18,7 @@ go get -u github.com/gogf/gf/contrib/drivers/mysql/v2
 安装etcd组件  
 go get -u github.com/gogf/gf/contrib/registry/etcd/v2  
 
-安装Elasticsearch  
+# 安装Elasticsearch  
 docker run -d --name elasticsearch `
 -p 9200:9200 -p 9300:9300 `
 -e "discovery.type=single-node" `
@@ -26,7 +26,14 @@ docker run -d --name elasticsearch `
 -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" `
 -v es-data:/usr/share/elasticsearch/data `
 docker.elastic.co/elasticsearch/elasticsearch:8.11.0  
-安装Kibana  
+
+IK分词器下载elasticsearch-analysis-ik-8.11.0.zip    
+https://release.infinilabs.com/analysis-ik/stable/  
+docker cp D:\MyPlugins\elasticsearch-analysis-ik-8.11.0.zip elasticsearch:/tmp/ik.zip  
+
+索引的删除  
+curl.exe -X DELETE http://localhost:9200/mall_goods
+# 安装Kibana  
 docker run -d --name kibana ^
 -p 5601:5601 ^
 -e "ELASTICSEARCH_HOSTS=http://elasticsearch:9200" ^
@@ -35,23 +42,38 @@ docker run -d --name kibana ^
 -e "XPACK_MONITORING_ENABLED=false" ^
 --link elasticsearch:elasticsearch ^
 docker.elastic.co/kibana/kibana:8.11.0  
-IK分词器下载elasticsearch-analysis-ik-8.11.0.zip    
-https://release.infinilabs.com/analysis-ik/stable/  
-docker cp D:\MyPlugins\elasticsearch-analysis-ik-8.11.0.zip elasticsearch:/tmp/ik.zip  
-安装IK分词器  
-# 进入容器内部
-docker exec -it elasticsearch /bin/bash
-
-# 在容器内部执行安装命令（针对复制的ZIP文件）
-./bin/elasticsearch-plugin install file:///tmp/ik.zip
-
-# 安装完成后，退出容器
+# Kibana设置为中文  
+查看端口  
+docker ps  
+进入Kibana容器  
+docker exec -it [kibana容器ID] /bin/bash  
+查看配置文件  
+cat /usr/share/kibana/config/kibana.yml  
+引入中文配置  
+cat > /usr/share/kibana/config/kibana.yml <<EOF  
+server.host: "0.0.0.0"  
+server.shutdownTimeout: "5s"  
+elasticsearch.hosts: ["http://elasticsearch:9200"]  
+monitoring.ui.container.elasticsearch.enabled: true   
+i18n.locale: "zh-CN"  
+EOF  
+关闭  
 exit  
+重启容器  
+docker restart [kibana容器ID]
 
-# 重启elasticsearch  
+
+# 安装IK分词器  
+进入容器内部  
+docker exec -it elasticsearch /bin/bash  
+在容器内部执行安装命令（针对复制的ZIP文件）  
+./bin/elasticsearch-plugin install file:///tmp/ik.zip  
+安装完成后，退出容器  
+exit  
+重启elasticsearch  
 docker restart elasticsearch
 
-微服务编写流程  
+# 微服务编写流程  
 初始化文件 gf init app/admin -a   
 修改hack/config.yaml配置文件  如dao和pbentity的配置
 生成dao模型和pbentity模型  gf gen dao  gf gen pbentity
