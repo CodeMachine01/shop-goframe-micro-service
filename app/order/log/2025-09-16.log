@@ -18,3 +18,11 @@
 2025-09-16T15:15:39 [INFO] {983f7eb7feb165188a2171319e7c7cd1} order-service pid[52304]: grpc server started listening on [:31005]
 2025-09-16T15:19:52 [INFO] order-service signal received: interrupt, gracefully shutting down
 2025-09-16T15:19:52 [DEBU] {983f7eb7feb165188a2171319e7c7cd1} order-service service deregister: &{Service:0xc000296380 Endpoints:192.168.190.1:31005,192.168.72.1:31005,172.30.103.68:31005,172.29.208.1:31005,172.17.144.1:31005 Metadata:map[protocol:grpc]}
+2025-09-16T15:49:05 [DEBU] {303392acd1b3651853aec94011f98d54} order-service service register: &{Head: Deployment: Namespace: Name:order Version: Endpoints:192.168.190.1:31005,192.168.72.1:31005,172.30.103.68:31005,172.29.208.1:31005,172.17.144.1:31005 Metadata:map[protocol:grpc]}
+2025-09-16T15:49:05 [INFO] {303392acd1b3651853aec94011f98d54} order-service pid[196024]: grpc server started listening on [:31005]
+2025-09-16T15:53:41 [INFO] order-service signal received: interrupt, gracefully shutting down
+2025-09-16T15:53:41 [DEBU] {303392acd1b3651853aec94011f98d54} order-service service deregister: &{Service:0xc00029c230 Endpoints:192.168.190.1:31005,192.168.72.1:31005,172.30.103.68:31005,172.29.208.1:31005,172.17.144.1:31005 Metadata:map[protocol:grpc]}
+2025-09-16T16:12:42 [DEBU] {8472219e1bb56518e0ff3378a4cb3cc9} order-service service register: &{Head: Deployment: Namespace: Name:order Version: Endpoints:192.168.190.1:31005,192.168.72.1:31005,172.30.103.68:31005,172.29.208.1:31005,172.17.144.1:31005 Metadata:map[protocol:grpc]}
+2025-09-16T16:12:42 [INFO] {8472219e1bb56518e0ff3378a4cb3cc9} order-service pid[302612]: grpc server started listening on [:31005]
+2025-09-16T16:19:50 [INFO] order-service signal received: interrupt, gracefully shutting down
+2025-09-16T16:19:50 [DEBU] {8472219e1bb56518e0ff3378a4cb3cc9} order-service service deregister: &{Service:0xc0002f25b0 Endpoints:192.168.190.1:31005,192.168.72.1:31005,172.30.103.68:31005,172.29.208.1:31005,172.17.144.1:31005 Metadata:map[protocol:grpc]}
