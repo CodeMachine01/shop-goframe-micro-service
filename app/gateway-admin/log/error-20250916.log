@@ -1,0 +1,57 @@
+2025-09-16 11:12:50.875 {3439f78cbea4651844e02d5523156e8c} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/order?page&size&number&user_id&pay_type&status&consignee_phone&price_gte&price_lte&seconds=&seconds=&seconds=&seconds=&nanos=&nanos=&nanos=&nanos= HTTP/1.1" 3001448.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/order/api/order_info/v1.(*orderInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/order/api/order_info/v1/order_info_grpc.pb.go:68
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/order/order_v1_order_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-16 11:13:06.029 {e8a12214c2a4651845e02d55d2dd3c1a} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/order?page&size&number&user_id&pay_type&status&consignee_phone&price_gte&price_lte&seconds=&seconds=&seconds=&seconds=&nanos=&nanos=&nanos=&nanos= HTTP/1.1" 3003002.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/order/api/order_info/v1.(*orderInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/order/api/order_info/v1/order_info_grpc.pb.go:68
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/order/order_v1_order_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-16 11:13:16.334 {f8469942b3a465183336b755e697e228} gateway-admin service deregister: &{Service:0xc0000ba150 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-16 11:14:06.375 {342a1f21d0a465186cfa991ade68e992} gateway-admin 200 "GET http 127.0.0.1:8299 /backend/order?page&size&number&user_id&pay_type&status&consignee_phone&price_gte&price_lte&seconds=&seconds=&seconds=&seconds=&nanos=&nanos=&nanos=&nanos= HTTP/1.1" 3001614.500, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 4, "", ""
+Stack:
+1. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/order/api/order_info/v1.(*orderInfoClient).GetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/order/api/order_info/v1/order_info_grpc.pb.go:68
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/order/order_v1_order_info_get_list.go:19
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-16 11:15:57.190 {24aae443cda46518a20d5b31b888b912} gateway-admin service deregister: &{Service:0xc0001798f0 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-16 11:15:57.197 gateway-admin pid[1138728]: all servers shutdown

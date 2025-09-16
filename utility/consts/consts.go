@@ -23,6 +23,7 @@ const (
 	PraiseInfo         = "PraiseInfo"
 	AdminInfo          = "AdminInfo"
 	SearchGoods        = "SearchGoods"
+	OrderInfo          = "OrderInfo"
 )
 
 func InfoError(info string, fail string) string {

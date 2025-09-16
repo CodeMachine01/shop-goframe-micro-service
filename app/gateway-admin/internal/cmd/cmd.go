@@ -4,6 +4,7 @@ import (
 	"context"
 	"shop-goframe-micro-service/app/gateway-admin/internal/controller/admin"
 	"shop-goframe-micro-service/app/gateway-admin/internal/controller/goods"
+	"shop-goframe-micro-service/app/gateway-admin/internal/controller/order"
 	"shop-goframe-micro-service/utility/middleware"
 
 	"github.com/gogf/gf/v2/frame/g"
@@ -18,19 +19,20 @@ var (
 		Brief: "start http gateway-admin server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
-			s.Group("/", func(group *ghttp.RouterGroup) {
+			s.Group("/backend", func(group *ghttp.RouterGroup) {
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
-				group.Group("/backend", func(group *ghttp.RouterGroup) {
+				group.Group("/", func(group *ghttp.RouterGroup) {
 					group.Bind(
 						admin.NewV1(),
 					)
 				})
 				//需要JWT验证的路由
-				group.Group("/backend", func(group *ghttp.RouterGroup) {
+				group.Group("/", func(group *ghttp.RouterGroup) {
 					group.Middleware(middleware.JWTAuth)
 					group.Bind(
 						//需要认证的接口
 						goods.NewV1(),
+						order.NewV1(),
 					)
 				})
 			})

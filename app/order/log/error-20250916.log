@@ -1,0 +1,1 @@
+2025-09-16T10:50:45 [ERRO] {388225a18aa36518a75c03508487bdb0} order-service /order_info.v1.order_info/GetDetail, 6.214ms, 52, "OrderInfo GetDetail 查询失败: 查询订单失败: sql: no rows in result set", id:18, <nil>, -1, "", "", rpc error: code = Code(52) desc = OrderInfo GetDetail 查询失败: 查询订单失败: sql: no rows in result set
