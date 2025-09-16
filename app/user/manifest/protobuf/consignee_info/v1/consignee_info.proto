@@ -64,6 +64,7 @@ message ConsigneeInfoUpdateRes {
 message ConsigneeInfoGetListReq{
   uint32 page=1;
   uint32 size=2;
+  uint32 UserId=3;
 }
 
 message ConsigneeInfoGetListRes {

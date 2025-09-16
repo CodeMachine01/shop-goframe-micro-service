@@ -8,7 +8,6 @@ import (
 // 创建收货地址请求
 type ConsigneeInfoCreateReq struct {
 	g.Meta    `path:"/consignee" method:"post" tags:"收货地址管理" summary:"创建收获地址"`
-	UserId    uint32 `json:"userId"    description:"用户id"`        //用户id
 	IsDefault uint32 `json:"isDefault"  description:"默认地址1 非默认0"` // 默认地址1 非默认0
 	Name      string `json:"name"            description:"姓名"`    // 姓名
 	Phone     string `json:"phone"           description:"电话号"`   // 电话号

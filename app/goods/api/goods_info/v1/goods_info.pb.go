@@ -125,6 +125,7 @@ type GoodsInfoCreateReq struct {
 	Sale             uint32                 `protobuf:"varint,9,opt,name=sale,proto3" json:"sale,omitempty"`
 	Tags             string                 `protobuf:"bytes,10,opt,name=tags,proto3" json:"tags,omitempty"`
 	DetailInfo       string                 `protobuf:"bytes,11,opt,name=detail_info,json=detailInfo,proto3" json:"detail_info,omitempty"`
+	PicUrl           string                 `protobuf:"bytes,12,opt,name=pic_url,json=picUrl,proto3" json:"pic_url,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -236,6 +237,13 @@ func (x *GoodsInfoCreateReq) GetDetailInfo() string {
 	return ""
 }
 
+func (x *GoodsInfoCreateReq) GetPicUrl() string {
+	if x != nil {
+		return x.PicUrl
+	}
+	return ""
+}
+
 type GoodsInfoCreateRes struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -294,6 +302,7 @@ type GoodsInfoUpdateReq struct {
 	Sale             uint32                 `protobuf:"varint,10,opt,name=sale,proto3" json:"sale,omitempty"`
 	Tags             string                 `protobuf:"bytes,11,opt,name=tags,proto3" json:"tags,omitempty"`
 	DetailInfo       string                 `protobuf:"bytes,12,opt,name=detail_info,json=detailInfo,proto3" json:"detail_info,omitempty"`
+	PicUrl           string                 `protobuf:"bytes,13,opt,name=pic_url,json=picUrl,proto3" json:"pic_url,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -408,6 +417,13 @@ func (x *GoodsInfoUpdateReq) GetTags() string {
 func (x *GoodsInfoUpdateReq) GetDetailInfo() string {
 	if x != nil {
 		return x.DetailInfo
+	}
+	return ""
+}
+
+func (x *GoodsInfoUpdateReq) GetPicUrl() string {
+	if x != nil {
+		return x.PicUrl
 	}
 	return ""
 }
@@ -708,7 +724,7 @@ const file_goods_info_v1_goods_info_proto_rawDesc = "" +
 	"\x15GoodsInfoGetDetailReq\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"@\n" +
 	"\x15GoodsInfoGetDetailRes\x12'\n" +
-	"\x04data\x18\x01 \x01(\v2\x13.pbentity.GoodsInfoR\x04data\"\xd5\x02\n" +
+	"\x04data\x18\x01 \x01(\v2\x13.pbentity.GoodsInfoR\x04data\"\xee\x02\n" +
 	"\x12GoodsInfoCreateReq\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05price\x18\x02 \x01(\x04R\x05price\x12\x16\n" +
@@ -722,9 +738,10 @@ const file_goods_info_v1_goods_info_proto_rawDesc = "" +
 	"\x04tags\x18\n" +
 	" \x01(\tR\x04tags\x12\x1f\n" +
 	"\vdetail_info\x18\v \x01(\tR\n" +
-	"detailInfo\"$\n" +
+	"detailInfo\x12\x17\n" +
+	"\apic_url\x18\f \x01(\tR\x06picUrl\"$\n" +
 	"\x12GoodsInfoCreateRes\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\rR\x02id\"\xe5\x02\n" +
+	"\x02id\x18\x01 \x01(\rR\x02id\"\xfe\x02\n" +
 	"\x12GoodsInfoUpdateReq\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
@@ -739,7 +756,8 @@ const file_goods_info_v1_goods_info_proto_rawDesc = "" +
 	" \x01(\rR\x04sale\x12\x12\n" +
 	"\x04tags\x18\v \x01(\tR\x04tags\x12\x1f\n" +
 	"\vdetail_info\x18\f \x01(\tR\n" +
-	"detailInfo\"$\n" +
+	"detailInfo\x12\x17\n" +
+	"\apic_url\x18\r \x01(\tR\x06picUrl\"$\n" +
 	"\x12GoodsInfoUpdateRes\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"$\n" +
 	"\x12GoodsInfoDeleteReq\x12\x0e\n" +

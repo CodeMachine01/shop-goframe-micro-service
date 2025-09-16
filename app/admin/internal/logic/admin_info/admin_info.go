@@ -87,5 +87,5 @@ func Login(ctx context.Context, name, password string) (token string, expire tim
 	}
 
 	// 5. 生成JWT Token
-	return utility.GenerateToken(admin.Id)
+	return utility.GenerateToken(uint32(admin.Id))
 }

@@ -15,6 +15,7 @@ type GoodsInfo struct {
 	Id               any         //
 	Name             any         // 商品名字
 	Images           any         // 支持单图,多图
+	PicUrl           any         // 主图URL
 	Price            any         // 价格(分)
 	Level1CategoryId any         // 1级分类id
 	Level2CategoryId any         // 2级分类id

@@ -67,11 +67,11 @@ type Api struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The fully qualified name of this interface, including package name
 	// followed by the interface's simple name.
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name." dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name." dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name."`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name." dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name." dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name." dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name." dc:"The fully qualified name of this interface, including package namefollowed by the interface's simple name."`
 	// The methods of this interface, in unspecified order.
-	Methods []*Method `protobuf:"bytes,2,rep,name=methods,proto3" json:"methods,omitempty" dc:"The methods of this interface, in unspecified order." dc:"The methods of this interface, in unspecified order." dc:"The methods of this interface, in unspecified order."`
+	Methods []*Method `protobuf:"bytes,2,rep,name=methods,proto3" json:"methods,omitempty" dc:"The methods of this interface, in unspecified order." dc:"The methods of this interface, in unspecified order." dc:"The methods of this interface, in unspecified order." dc:"The methods of this interface, in unspecified order." dc:"The methods of this interface, in unspecified order."`
 	// Any metadata attached to the interface.
-	Options []*typepb.Option `protobuf:"bytes,3,rep,name=options,proto3" json:"options,omitempty" dc:"Any metadata attached to the interface." dc:"Any metadata attached to the interface." dc:"Any metadata attached to the interface."`
+	Options []*typepb.Option `protobuf:"bytes,3,rep,name=options,proto3" json:"options,omitempty" dc:"Any metadata attached to the interface." dc:"Any metadata attached to the interface." dc:"Any metadata attached to the interface." dc:"Any metadata attached to the interface." dc:"Any metadata attached to the interface."`
 	// A version string for this interface. If specified, must have the form
 	// `major-version.minor-version`, as in `1.10`. If the minor version is
 	// omitted, it defaults to zero. If the entire version field is empty, the
@@ -91,14 +91,14 @@ type Api struct {
 	// `google.feature.v1`. For major versions 0 and 1, the suffix can
 	// be omitted. Zero major versions must only be used for
 	// experimental, non-GA interfaces.
-	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty" dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces." dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces." dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces."`
+	Version string `protobuf:"bytes,4,opt,name=version,proto3" json:"version,omitempty" dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces." dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces." dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces." dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces." dc:"The major version is also reflected in the package name of theinterface, which must end in 'v<major-version>', as in'google.feature.v1'. For major versions 0 and 1, the suffix canbe omitted. Zero major versions must only be used forexperimental, non-GA interfaces."`
 	// Source context for the protocol buffer service represented by this
 	// message.
-	SourceContext *sourcecontextpb.SourceContext `protobuf:"bytes,5,opt,name=source_context,json=sourceContext,proto3" json:"source_context,omitempty" dc:"Source context for the protocol buffer service represented by thismessage." dc:"Source context for the protocol buffer service represented by thismessage." dc:"Source context for the protocol buffer service represented by thismessage."`
+	SourceContext *sourcecontextpb.SourceContext `protobuf:"bytes,5,opt,name=source_context,json=sourceContext,proto3" json:"source_context,omitempty" dc:"Source context for the protocol buffer service represented by thismessage." dc:"Source context for the protocol buffer service represented by thismessage." dc:"Source context for the protocol buffer service represented by thismessage." dc:"Source context for the protocol buffer service represented by thismessage." dc:"Source context for the protocol buffer service represented by thismessage."`
 	// Included interfaces. See [Mixin][].
-	Mixins []*Mixin `protobuf:"bytes,6,rep,name=mixins,proto3" json:"mixins,omitempty" dc:"Included interfaces. See [Mixin][]." dc:"Included interfaces. See [Mixin][]." dc:"Included interfaces. See [Mixin][]."`
+	Mixins []*Mixin `protobuf:"bytes,6,rep,name=mixins,proto3" json:"mixins,omitempty" dc:"Included interfaces. See [Mixin][]." dc:"Included interfaces. See [Mixin][]." dc:"Included interfaces. See [Mixin][]." dc:"Included interfaces. See [Mixin][]." dc:"Included interfaces. See [Mixin][]."`
 	// The source syntax of the service.
-	Syntax        typepb.Syntax `protobuf:"varint,7,opt,name=syntax,proto3,enum=google.protobuf.Syntax" json:"syntax,omitempty" dc:"The source syntax of the service." dc:"The source syntax of the service." dc:"The source syntax of the service."`
+	Syntax        typepb.Syntax `protobuf:"varint,7,opt,name=syntax,proto3,enum=google.protobuf.Syntax" json:"syntax,omitempty" dc:"The source syntax of the service." dc:"The source syntax of the service." dc:"The source syntax of the service." dc:"The source syntax of the service." dc:"The source syntax of the service."`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -186,19 +186,19 @@ func (x *Api) GetSyntax() typepb.Syntax {
 type Method struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The simple name of this method.
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" dc:"The simple name of this method." dc:"The simple name of this method." dc:"The simple name of this method."`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" dc:"The simple name of this method." dc:"The simple name of this method." dc:"The simple name of this method." dc:"The simple name of this method." dc:"The simple name of this method."`
 	// A URL of the input message type.
-	RequestTypeUrl string `protobuf:"bytes,2,opt,name=request_type_url,json=requestTypeUrl,proto3" json:"request_type_url,omitempty" dc:"A URL of the input message type." dc:"A URL of the input message type." dc:"A URL of the input message type."`
+	RequestTypeUrl string `protobuf:"bytes,2,opt,name=request_type_url,json=requestTypeUrl,proto3" json:"request_type_url,omitempty" dc:"A URL of the input message type." dc:"A URL of the input message type." dc:"A URL of the input message type." dc:"A URL of the input message type." dc:"A URL of the input message type."`
 	// If true, the request is streamed.
-	RequestStreaming bool `protobuf:"varint,3,opt,name=request_streaming,json=requestStreaming,proto3" json:"request_streaming,omitempty" dc:"If true, the request is streamed." dc:"If true, the request is streamed." dc:"If true, the request is streamed."`
+	RequestStreaming bool `protobuf:"varint,3,opt,name=request_streaming,json=requestStreaming,proto3" json:"request_streaming,omitempty" dc:"If true, the request is streamed." dc:"If true, the request is streamed." dc:"If true, the request is streamed." dc:"If true, the request is streamed." dc:"If true, the request is streamed."`
 	// The URL of the output message type.
-	ResponseTypeUrl string `protobuf:"bytes,4,opt,name=response_type_url,json=responseTypeUrl,proto3" json:"response_type_url,omitempty" dc:"The URL of the output message type." dc:"The URL of the output message type." dc:"The URL of the output message type."`
+	ResponseTypeUrl string `protobuf:"bytes,4,opt,name=response_type_url,json=responseTypeUrl,proto3" json:"response_type_url,omitempty" dc:"The URL of the output message type." dc:"The URL of the output message type." dc:"The URL of the output message type." dc:"The URL of the output message type." dc:"The URL of the output message type."`
 	// If true, the response is streamed.
-	ResponseStreaming bool `protobuf:"varint,5,opt,name=response_streaming,json=responseStreaming,proto3" json:"response_streaming,omitempty" dc:"If true, the response is streamed." dc:"If true, the response is streamed." dc:"If true, the response is streamed."`
+	ResponseStreaming bool `protobuf:"varint,5,opt,name=response_streaming,json=responseStreaming,proto3" json:"response_streaming,omitempty" dc:"If true, the response is streamed." dc:"If true, the response is streamed." dc:"If true, the response is streamed." dc:"If true, the response is streamed." dc:"If true, the response is streamed."`
 	// Any metadata attached to the method.
-	Options []*typepb.Option `protobuf:"bytes,6,rep,name=options,proto3" json:"options,omitempty" dc:"Any metadata attached to the method." dc:"Any metadata attached to the method." dc:"Any metadata attached to the method."`
+	Options []*typepb.Option `protobuf:"bytes,6,rep,name=options,proto3" json:"options,omitempty" dc:"Any metadata attached to the method." dc:"Any metadata attached to the method." dc:"Any metadata attached to the method." dc:"Any metadata attached to the method." dc:"Any metadata attached to the method."`
 	// The source syntax of this method.
-	Syntax        typepb.Syntax `protobuf:"varint,7,opt,name=syntax,proto3,enum=google.protobuf.Syntax" json:"syntax,omitempty" dc:"The source syntax of this method." dc:"The source syntax of this method." dc:"The source syntax of this method."`
+	Syntax        typepb.Syntax `protobuf:"varint,7,opt,name=syntax,proto3,enum=google.protobuf.Syntax" json:"syntax,omitempty" dc:"The source syntax of this method." dc:"The source syntax of this method." dc:"The source syntax of this method." dc:"The source syntax of this method." dc:"The source syntax of this method."`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -363,10 +363,10 @@ func (x *Method) GetSyntax() typepb.Syntax {
 type Mixin struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// The fully qualified name of the interface which is included.
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" dc:"The fully qualified name of the interface which is included." dc:"The fully qualified name of the interface which is included." dc:"The fully qualified name of the interface which is included."`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" dc:"The fully qualified name of the interface which is included." dc:"The fully qualified name of the interface which is included." dc:"The fully qualified name of the interface which is included." dc:"The fully qualified name of the interface which is included." dc:"The fully qualified name of the interface which is included."`
 	// If non-empty specifies a path under which inherited HTTP paths
 	// are rooted.
-	Root          string `protobuf:"bytes,2,opt,name=root,proto3" json:"root,omitempty" dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted." dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted." dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted."`
+	Root          string `protobuf:"bytes,2,opt,name=root,proto3" json:"root,omitempty" dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted." dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted." dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted." dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted." dc:"If non-empty specifies a path under which inherited HTTP pathsare rooted."`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

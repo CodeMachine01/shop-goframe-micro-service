@@ -415,6 +415,7 @@ type ConsigneeInfoGetListReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Page          uint32                 `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
 	Size          uint32                 `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
+	UserId        uint32                 `protobuf:"varint,3,opt,name=UserId,proto3" json:"UserId,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -459,6 +460,13 @@ func (x *ConsigneeInfoGetListReq) GetPage() uint32 {
 func (x *ConsigneeInfoGetListReq) GetSize() uint32 {
 	if x != nil {
 		return x.Size
+	}
+	return 0
+}
+
+func (x *ConsigneeInfoGetListReq) GetUserId() uint32 {
+	if x != nil {
+		return x.UserId
 	}
 	return 0
 }
@@ -606,10 +614,11 @@ const file_consignee_info_v1_consignee_info_proto_rawDesc = "" +
 	"\x06Street\x18\b \x01(\tR\x06Street\x12\x16\n" +
 	"\x06Detail\x18\t \x01(\tR\x06Detail\"(\n" +
 	"\x16ConsigneeInfoUpdateRes\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\rR\x02id\"A\n" +
+	"\x02id\x18\x01 \x01(\rR\x02id\"Y\n" +
 	"\x17ConsigneeInfoGetListReq\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\rR\x04page\x12\x12\n" +
-	"\x04size\x18\x02 \x01(\rR\x04size\"X\n" +
+	"\x04size\x18\x02 \x01(\rR\x04size\x12\x16\n" +
+	"\x06UserId\x18\x03 \x01(\rR\x06UserId\"X\n" +
 	"\x17ConsigneeInfoGetListRes\x12=\n" +
 	"\x04data\x18\x01 \x01(\v2).consignee_info.ConsigneeInfoListResponseR\x04data\"\x86\x01\n" +
 	"\x19ConsigneeInfoListResponse\x12+\n" +

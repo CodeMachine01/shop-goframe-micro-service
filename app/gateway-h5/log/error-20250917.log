@@ -1,0 +1,96 @@
+2025-09-17T02:25:49 {f8fcec5a91d66518c8f48b242af7923b} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/user/info?id HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17T02:26:11 {4824f46d96d66518c9f48b245ae97dca} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/user/info?id HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 51, "Validation Failed", ""
+Stack:
+用户ID不能为空
+2025-09-17T02:30:07 {2839d358cdd66518f87566753bcd0de3} gateway-h5 200 "PUT http 127.0.0.1:8199 /frontend/user/update/password HTTP/1.1" 513.500, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17T02:30:19 {28b3752ad0d66518f975667599641215} gateway-h5 200 "PUT http 127.0.0.1:8199 /frontend/user/update/password HTTP/1.1" 22925.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 52, "", ""
+Stack:
+1. UserInfo UpdatePassword 修改密码失败: 密保答案错误
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).UpdatePassword
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:74
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoUpdatePassword
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_update_password.go:27
+   7).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   8).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17T02:30:51 {ccce96abd7d66518fb7566751b1037db} gateway-h5 200 "PUT http 127.0.0.1:8199 /frontend/user/update/password HTTP/1.1" 10164.100, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 52, "", ""
+Stack:
+1. UserInfo UpdatePassword 修改密码失败: 密保答案错误
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).UpdatePassword
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:74
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoUpdatePassword
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_update_password.go:27
+   7).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:34
+   8).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17T02:33:08 {8455a9b7f7d66518017666756fb1e7b5} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/user/login HTTP/1.1" 3875.800, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:27
+2. UserInfo Login 登录失败: 密码错误
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/user/api/user_info/v1.(*userInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/user/api/user_info/v1/user_info_grpc.pb.go:54
+   6).  shop-goframe-micro-service/app/gateway-h5/internal/controller/user.(*ControllerV1).UserInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-h5/internal/controller/user/user_v1_user_info_login.go:22
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17T02:34:45 {60d7393f0ed76518037666754f394d48} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/consignee?page&size HTTP/1.1" 526.100, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17T02:35:24 {30d5f85317d76518da324a1258db1737} gateway-h5 200 "POST http 127.0.0.1:8199 /frontend/consignee HTTP/1.1" 0.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+

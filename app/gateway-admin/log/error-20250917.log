@@ -1,0 +1,73 @@
+2025-09-17 01:29:04.005 {1ceafd7c78d365185cc4e0530e64d96e} gateway-admin 200 "POST http 127.0.0.1:8299 /backend/goods HTTP/1.1" 1045.600, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17 01:29:22.767 {b8ef70287cd365185dc4e053e0f9966d} gateway-admin 200 "POST http 127.0.0.1:8299 /backend/admin/login HTTP/1.1" 3001157.000, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:26
+2. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/admin/api/admin_info/v1.(*adminInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/admin/api/admin_info/v1/admin_info_grpc.pb.go:48
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:21
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17 01:30:01.921 {e439e9f137d3651829a43750d8ef5292} gateway-admin service deregister: &{Service:0xc0003abd50 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-17 01:30:01.926 gateway-admin pid[688488]: all servers shutdown
+2025-09-17 01:30:32.433 {9033d5608cd36518a4af082859bc6169} gateway-admin 200 "POST http 127.0.0.1:8299 /backend/admin/login HTTP/1.1" 3002211.700, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:26
+2. context deadline exceeded
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/admin/api/admin_info/v1.(*adminInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/admin/api/admin_info/v1/admin_info_grpc.pb.go:48
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:21
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17 01:31:12.490 {3c472f6596d36518a5af0828ac3947f8} gateway-admin 200 "POST http 127.0.0.1:8299 /backend/admin/login HTTP/1.1" 35573.200, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 50, "Internal Error", ""
+Stack:
+1. 登录失败
+   1).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:26
+2. AdminInfo Login 登录失败: 用户不存在
+   1).  google.golang.org/grpc.getChainUnaryInvoker.func1.getChainUnaryInvoker.1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:489
+   2).  shop-goframe-micro-service/utility/middleware.GrpcClientTimeout
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:17
+   3).  google.golang.org/grpc.NewClient.chainUnaryClientInterceptors.func1
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/clientconn.go:477
+   4).  google.golang.org/grpc.(*ClientConn).Invoke
+        C:/Users/CodeMachine/go/pkg/mod/google.golang.org/grpc@v1.75.0/call.go:35
+   5).  shop-goframe-micro-service/app/admin/api/admin_info/v1.(*adminInfoClient).Login
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/admin/api/admin_info/v1/admin_info_grpc.pb.go:48
+   6).  shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/app/gateway-admin/internal/controller/admin/admin_v1_admin_info_login.go:21
+   7).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+

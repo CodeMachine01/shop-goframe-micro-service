@@ -156,6 +156,7 @@ func (*Controller) Create(ctx context.Context, req *v1.GoodsInfoCreateReq) (res 
 	if err := gconv.Struct(req, &goodsInfo); err != nil {
 		return nil, err
 	}
+
 	// 错误类型
 	infoError := consts.InfoError(consts.GoodsInfo, consts.CreateFail)
 	// 向数据库中插入数据并获取自动生成的ID

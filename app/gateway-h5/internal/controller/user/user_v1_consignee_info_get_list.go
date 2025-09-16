@@ -4,6 +4,7 @@ import (
 	"context"
 	"github.com/gogf/gf/v2/util/gconv"
 	consignee "shop-goframe-micro-service/app/user/api/consignee_info/v1"
+	"shop-goframe-micro-service/utility/middleware"
 
 	"shop-goframe-micro-service/app/gateway-h5/api/user/v1"
 )
@@ -14,6 +15,15 @@ func (c *ControllerV1) ConsigneeInfoGetList(ctx context.Context, req *v1.Consign
 	if err := gconv.Struct(req, grpcReq); err != nil {
 		return nil, err
 	}
+	//通过token获取user_id
+	value := ctx.Value(middleware.CtxUserId)
+	userId, ok := value.(uint32)
+	if !ok {
+		// 处理类型不匹配的情况
+		panic("用户ID类型错误或不存在")
+	}
+	grpcReq.UserId = userId
+
 	//调用gRPC服务
 	grpcRes, err := c.ConsigneeInfoClient.GetList(ctx, grpcReq)
 	if err != nil {

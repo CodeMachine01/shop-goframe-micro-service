@@ -231,3 +231,445 @@
 ----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
 
 2025-09-17 00:30:23.743 [DEBU] {2c8e5b6b6dcf6518ef60a45a0205b0bc} gateway-admin service deregister: &{Service:0xc0002ba460 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-17 01:24:29.542 [INFO] {e439e9f137d3651829a43750d8ef5292} gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-17 01:24:29.543 [INFO] gateway-admin pid[688488]: http server started listening on [:8299]
+2025-09-17 01:24:29.543 [INFO] {e439e9f137d3651829a43750d8ef5292} gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-17 01:24:29.587 [DEBU] {e439e9f137d3651829a43750d8ef5292} gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                   HANDLER                                                   |           MIDDLEWARE            |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                                | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                       |                                 |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin       | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoDelete   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetList  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoCreate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoUpdate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category/all   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetAll   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order          | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order/{id}     | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                         | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-17 01:30:06.021 [INFO] {10d1a35786d36518d3f581613cff3abb} gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-17 01:30:06.021 [INFO] gateway-admin pid[731644]: http server started listening on [:8299]
+2025-09-17 01:30:06.021 [INFO] {10d1a35786d36518d3f581613cff3abb} gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-17 01:30:06.077 [DEBU] {10d1a35786d36518d3f581613cff3abb} gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                   HANDLER                                                   |           MIDDLEWARE            |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                                | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                       |                                 |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin       | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoDelete   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetList  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoCreate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoUpdate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category/all   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetAll   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order          | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order/{id}     | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                         | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-17 01:47:34.206 [INFO] {10d1a35786d36518d3f581613cff3abb} gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-17 01:47:34.206 [INFO] gateway-admin pid[803548]: http server started listening on [:8299]
+2025-09-17 01:47:34.206 [INFO] {10d1a35786d36518d3f581613cff3abb} gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-17 01:47:34.267 [DEBU] {10d1a35786d36518d3f581613cff3abb} gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                   HANDLER                                                   |           MIDDLEWARE            |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                                | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                       |                                 |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin       | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoDelete   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetList  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoCreate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoUpdate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category/all   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetAll   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order          | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order/{id}     | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                         | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-17 01:48:09.840 [INFO] {10d1a35786d36518d3f581613cff3abb} gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-17 01:48:09.841 [INFO] gateway-admin pid[803132]: http server started listening on [:8299]
+2025-09-17 01:48:09.841 [INFO] {10d1a35786d36518d3f581613cff3abb} gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-17 01:48:09.886 [DEBU] {10d1a35786d36518d3f581613cff3abb} gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                   HANDLER                                                   |           MIDDLEWARE            |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                                | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                       |                                 |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin       | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoDelete   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetList  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoCreate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoUpdate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category/all   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetAll   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order          | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order/{id}     | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                         | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-17 01:48:32.437 [DEBU] {10d1a35786d36518d3f581613cff3abb} gateway-admin service deregister: &{Service:0xc0000c5dc0 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+2025-09-17 01:54:07.614 [INFO] {e014f7f9d5d465184fb2ce471fbd9778} gateway-admin swagger ui is serving at address: http://127.0.0.1:8299/swagger/
+2025-09-17 01:54:07.615 [INFO] gateway-admin pid[835172]: http server started listening on [:8299]
+2025-09-17 01:54:07.615 [INFO] {e014f7f9d5d465184fb2ce471fbd9778} gateway-admin openapi specification is serving at address: http://127.0.0.1:8299/api.json
+2025-09-17 01:54:07.666 [DEBU] {e014f7f9d5d465184fb2ce471fbd9778} gateway-admin service register: &{Head: Deployment: Namespace: Name:default Version: Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}
+
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| ADDRESS | METHOD |          ROUTE          |                                                   HANDLER                                                   |           MIDDLEWARE            |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /*                      | shop-goframe-micro-service/utility/middleware.MiddlewareCORS                                                | GLOBAL MIDDLEWARE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /api.json               | github.com/gogf/gf/v2/net/ghttp.(*Server).openapiSpec                                                       |                                 |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/login    | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoLogin       | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/admin/register | shop-goframe-micro-service/app/gateway-admin/internal/controller/admin.(*ControllerV1).AdminInfoRegister    | ghttp.MiddlewareHandlerResponse |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoDelete   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetList  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoCreate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/category       | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoUpdate   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/category/all   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).CategoryInfoGetAll   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoDelete      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoCreate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/goods          | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoUpdate      | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/detail   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesDelete    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesGetList   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/goods/images   | shop-goframe-micro-service/app/gateway-admin/internal/controller/goods.(*ControllerV1).GoodsImagesCreate    | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order          | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetList     | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/order/{id}     | shop-goframe-micro-service/app/gateway-admin/internal/controller/order.(*ControllerV1).OrderInfoGetDetail   | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/position       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).PositionInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | DELETE | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoDelete  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | GET    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoGetList | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | POST   | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoCreate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | PUT    | /backend/rotation       | shop-goframe-micro-service/app/gateway-admin/internal/controller/banner.(*ControllerV1).RotationInfoUpdate  | ghttp.MiddlewareHandlerResponse |
+|         |        |                         |                                                                                                             | middleware.JWTAuth              |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+| :8299   | ALL    | /swagger/*              | github.com/gogf/gf/v2/net/ghttp.(*Server).swaggerUI                                                         | HOOK_BEFORE_SERVE               |
+----------|--------|-------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------
+
+2025-09-17 02:00:24.031 [DEBU] {e014f7f9d5d465184fb2ce471fbd9778} gateway-admin service deregister: &{Service:0xc0002f38f0 Endpoints:192.168.190.1:8299,192.168.72.1:8299,172.30.103.68:8299,172.29.208.1:8299,172.17.144.1:8299 Metadata:map[insecure:true protocol:http]}

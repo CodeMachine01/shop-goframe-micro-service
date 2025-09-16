@@ -251,9 +251,9 @@ type Any struct {
 	//
 	// Schemes other than `http`, `https` (or the empty scheme) might be
 	// used with implementation specific semantics.
-	TypeUrl string `protobuf:"bytes,1,opt,name=type_url,json=typeUrl,proto3" json:"type_url,omitempty" dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics." dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics." dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics."`
+	TypeUrl string `protobuf:"bytes,1,opt,name=type_url,json=typeUrl,proto3" json:"type_url,omitempty" dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics." dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics." dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics." dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics." dc:"Schemes other than 'http', 'https' (or the empty scheme) might beused with implementation specific semantics."`
 	// Must be a valid serialized protocol buffer of the above specified type.
-	Value         []byte `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty" dc:"Must be a valid serialized protocol buffer of the above specified type." dc:"Must be a valid serialized protocol buffer of the above specified type." dc:"Must be a valid serialized protocol buffer of the above specified type."`
+	Value         []byte `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty" dc:"Must be a valid serialized protocol buffer of the above specified type." dc:"Must be a valid serialized protocol buffer of the above specified type." dc:"Must be a valid serialized protocol buffer of the above specified type." dc:"Must be a valid serialized protocol buffer of the above specified type." dc:"Must be a valid serialized protocol buffer of the above specified type."`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

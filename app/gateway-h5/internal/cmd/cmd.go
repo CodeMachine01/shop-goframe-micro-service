@@ -25,8 +25,8 @@ var (
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Group("/", func(group *ghttp.RouterGroup) {
 					group.Bind(
-						user.NewV1(),
-						goods.NewV1(),
+						user.NewV1().UserInfoLogin,
+						user.NewV1().UserInfoRegister,
 						banner.NewV1(),
 					)
 				})
@@ -35,7 +35,14 @@ var (
 					group.Middleware(middleware.JWTAuth)
 					group.Bind(
 						//需要认证的接口
+						user.NewV1().UserInfoUpdatePassword,
+						user.NewV1().UserInfo,
+						user.NewV1().ConsigneeInfoCreate,
+						user.NewV1().ConsigneeInfoUpdate,
+						user.NewV1().ConsigneeInfoDelete,
+						user.NewV1().ConsigneeInfoGetList,
 						interaction.NewV1(),
+						goods.NewV1(),
 						order.NewV1(),
 					)
 				})
