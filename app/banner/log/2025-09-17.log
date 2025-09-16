@@ -1,0 +1,4 @@
+2025-09-17 00:15:14.561 [DEBU] {90cec5a470cf6518cb6265180aa555fd} 公众号：王中阳：banner-service service register: &{Head: Deployment: Namespace: Name:banner Version: Endpoints:192.168.190.1:31006,192.168.72.1:31006,172.30.103.68:31006,172.29.208.1:31006,172.17.144.1:31006 Metadata:map[protocol:grpc]}
+2025-09-17 00:15:14.579 [INFO] {90cec5a470cf6518cb6265180aa555fd} 公众号：王中阳：banner-service pid[351596]: grpc server started listening on [:31006]
+2025-09-17 00:30:26.895 [INFO] 公众号：王中阳：banner-service signal received: interrupt, gracefully shutting down
+2025-09-17 00:30:26.895 [DEBU] {90cec5a470cf6518cb6265180aa555fd} 公众号：王中阳：banner-service service deregister: &{Service:0xc000132b60 Endpoints:192.168.190.1:31006,192.168.72.1:31006,172.30.103.68:31006,172.29.208.1:31006,172.17.144.1:31006 Metadata:map[protocol:grpc]}

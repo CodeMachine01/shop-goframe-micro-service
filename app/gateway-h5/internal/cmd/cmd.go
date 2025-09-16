@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"shop-goframe-micro-service/app/gateway-h5/internal/controller/banner"
 	"shop-goframe-micro-service/app/gateway-h5/internal/controller/goods"
 	"shop-goframe-micro-service/app/gateway-h5/internal/controller/interaction"
 	"shop-goframe-micro-service/app/gateway-h5/internal/controller/order"
@@ -26,6 +27,7 @@ var (
 					group.Bind(
 						user.NewV1(),
 						goods.NewV1(),
+						banner.NewV1(),
 					)
 				})
 				// 需要JWT验证的路由

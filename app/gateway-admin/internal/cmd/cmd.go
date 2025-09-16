@@ -3,6 +3,7 @@ package cmd
 import (
 	"context"
 	"shop-goframe-micro-service/app/gateway-admin/internal/controller/admin"
+	"shop-goframe-micro-service/app/gateway-admin/internal/controller/banner"
 	"shop-goframe-micro-service/app/gateway-admin/internal/controller/goods"
 	"shop-goframe-micro-service/app/gateway-admin/internal/controller/order"
 	"shop-goframe-micro-service/utility/middleware"
@@ -33,6 +34,7 @@ var (
 						//需要认证的接口
 						goods.NewV1(),
 						order.NewV1(),
+						banner.NewV1(),
 					)
 				})
 			})
