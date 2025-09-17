@@ -10,3 +10,11 @@
 2025-09-17T10:55:08 [INFO] {d479b4f95bf265183c168351c5d906f8} user-service pid[1055124]: grpc server started listening on [:31001]
 2025-09-17T10:58:13 [INFO] user-service signal received: interrupt, gracefully shutting down
 2025-09-17T10:58:13 [DEBU] {d479b4f95bf265183c168351c5d906f8} user-service service deregister: &{Service:0xc0002c2070 Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-17T15:40:27 [DEBU] {e85942c2ed0166185ad19977b161a330} user-service service register: &{Head: Deployment: Namespace: Name:user Version: Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-17T15:40:27 [INFO] {e85942c2ed0166185ad19977b161a330} user-service pid[233872]: grpc server started listening on [:31001]
+2025-09-17T15:41:19 [INFO] user-service signal received: interrupt, gracefully shutting down
+2025-09-17T15:41:19 [DEBU] {e85942c2ed0166185ad19977b161a330} user-service service deregister: &{Service:0xc0000ba4d0 Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-17T15:50:27 [DEBU] {fc00fc7f790266181f4669600646088f} user-service service register: &{Head: Deployment: Namespace: Name:user Version: Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
+2025-09-17T15:50:27 [INFO] {fc00fc7f790266181f4669600646088f} user-service pid[299004]: grpc server started listening on [:31001]
+2025-09-17T15:57:14 [INFO] user-service signal received: interrupt, gracefully shutting down
+2025-09-17T15:57:14 [DEBU] {fc00fc7f790266181f4669600646088f} user-service service deregister: &{Service:0xc00033c150 Endpoints:192.168.190.1:31001,192.168.72.1:31001,172.30.103.68:31001,172.29.208.1:31001,172.17.144.1:31001 Metadata:map[protocol:grpc]}
