@@ -20,6 +20,7 @@ type GoodsInfoGetListReq struct {
 	g.Meta `path:"/goods" method:"get" tags:"商品管理" sm:"商品分页列表"`
 	Page   uint32 `json:"page" d:"1"  v:"min:1" dc:"页码"`
 	Size   uint32 `json:"size" d:"10" v:"max:100" dc:"每页数量"`
+	IsHot  uint32 `json:"is_hot" d:"0"  dc:"热门推荐(1 开启)"`
 }
 
 type GoodsInfoGetListRes struct {
@@ -35,6 +36,7 @@ type GoodsInfoItem struct {
 	Price            uint64                 `json:"price" dc:"价格"`
 	PicUrl           string                 `json:"pic_url" dc:"主图"`
 	Images           string                 `json:"images" dc:"支持单图,多图"`
+	Sort             uint32                 `json:"sort" dc:"排序 倒序"`
 	Level1CategoryId uint32                 `json:"level1_category_id" dc:"一级分类ID"`
 	Level2CategoryId uint32                 `json:"level2_category_id" dc:"二级分类ID"`
 	Level3CategoryId uint32                 `json:"level3_category_id" dc:"三级分类ID"`
@@ -45,7 +47,6 @@ type GoodsInfoItem struct {
 	DetailInfo       string                 `json:"detail_info" dc:"详情"`
 	CreatedAt        *timestamppb.Timestamp `json:"created_at" dc:"创建时间"`
 	UpdatedAt        *timestamppb.Timestamp `json:"updated_at" dc:"更新时间"`
-	DeletedAt        *timestamppb.Timestamp `json:"deleted_at" dc:"删除时间"`
 }
 
 // 创建商品
@@ -55,6 +56,7 @@ type GoodsInfoCreateReq struct {
 	PicUrl           string `json:"pic_url" dc:"主图"`
 	Price            uint64 `json:"price" v:"required" dc:"价格"`
 	Images           string `json:"images" v:"required" dc:"支持单图,多图"`
+	Sort             uint32 `json:"sort" dc:"排序 倒序"`
 	Level1CategoryId uint32 `json:"level1_category_id" v:"required" dc:"一级分类ID"`
 	Level2CategoryId uint32 `json:"level2_category_id" dc:"二级分类ID"`
 	Level3CategoryId uint32 `json:"level3_category_id" dc:"三级分类ID"`
@@ -77,6 +79,7 @@ type GoodsInfoUpdateReq struct {
 	PicUrl           string `json:"pic_url" dc:"主图"`
 	Price            uint64 `json:"price" dc:"价格"`
 	Images           string `json:"images" dc:"支持单图,多图"`
+	Sort             uint32 `json:"sort" dc:"排序 倒序"`
 	Level1CategoryId uint32 `json:"level1_category_id" dc:"一级分类ID"`
 	Level2CategoryId uint32 `json:"level2_category_id" dc:"二级分类ID"`
 	Level3CategoryId uint32 `json:"level3_category_id" dc:"三级分类ID"`

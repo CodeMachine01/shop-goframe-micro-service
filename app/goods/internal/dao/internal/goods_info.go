@@ -26,6 +26,7 @@ type GoodsInfoColumns struct {
 	Images           string // 支持单图,多图
 	PicUrl           string // 主图URL
 	Price            string // 价格(分)
+	Sort             string // 排序 倒序
 	Level1CategoryId string // 1级分类id
 	Level2CategoryId string // 2级分类id
 	Level3CategoryId string // 3级分类id
@@ -46,6 +47,7 @@ var goodsInfoColumns = GoodsInfoColumns{
 	Images:           "images",
 	PicUrl:           "pic_url",
 	Price:            "price",
+	Sort:             "sort",
 	Level1CategoryId: "level1_category_id",
 	Level2CategoryId: "level2_category_id",
 	Level3CategoryId: "level3_category_id",

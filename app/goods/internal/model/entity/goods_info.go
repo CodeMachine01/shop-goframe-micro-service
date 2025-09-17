@@ -15,6 +15,7 @@ type GoodsInfo struct {
 	Images           string      `json:"images"           orm:"images"             description:"支持单图,多图"` // 支持单图,多图
 	PicUrl           string      `json:"picUrl"           orm:"pic_url"            description:"主图URL"`   // 主图URL
 	Price            int         `json:"price"            orm:"price"              description:"价格(分)"`   // 价格(分)
+	Sort             int         `json:"sort"             orm:"sort"               description:"排序 倒序"`   // 排序 倒序
 	Level1CategoryId int         `json:"level1CategoryId" orm:"level1_category_id" description:"1级分类id"`  // 1级分类id
 	Level2CategoryId int         `json:"level2CategoryId" orm:"level2_category_id" description:"2级分类id"`  // 2级分类id
 	Level3CategoryId int         `json:"level3CategoryId" orm:"level3_category_id" description:"3级分类id"`  // 3级分类id

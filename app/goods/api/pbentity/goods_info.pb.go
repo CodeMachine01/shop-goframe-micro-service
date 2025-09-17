@@ -34,17 +34,18 @@ type GoodsInfo struct {
 	Images           string                 `protobuf:"bytes,3,opt,name=Images,proto3" json:"Images,omitempty" dc:"支持单图,多图"`                     // 支持单图,多图
 	PicUrl           string                 `protobuf:"bytes,4,opt,name=PicUrl,proto3" json:"PicUrl,omitempty" dc:"主图URL"`                       // 主图URL
 	Price            int32                  `protobuf:"varint,5,opt,name=Price,proto3" json:"Price,omitempty" dc:"价格(分)"`                        // 价格(分)
-	Level1CategoryId int32                  `protobuf:"varint,6,opt,name=Level1CategoryId,proto3" json:"Level1CategoryId,omitempty" dc:"1级分类id"` // 1级分类id
-	Level2CategoryId int32                  `protobuf:"varint,7,opt,name=Level2CategoryId,proto3" json:"Level2CategoryId,omitempty" dc:"2级分类id"` // 2级分类id
-	Level3CategoryId int32                  `protobuf:"varint,8,opt,name=Level3CategoryId,proto3" json:"Level3CategoryId,omitempty" dc:"3级分类id"` // 3级分类id
-	Brand            string                 `protobuf:"bytes,9,opt,name=Brand,proto3" json:"Brand,omitempty" dc:"品牌"`                            // 品牌
-	Stock            int32                  `protobuf:"varint,10,opt,name=Stock,proto3" json:"Stock,omitempty" dc:"库存"`                          // 库存
-	Sale             int32                  `protobuf:"varint,11,opt,name=Sale,proto3" json:"Sale,omitempty" dc:"销量"`                            // 销量
-	Tags             string                 `protobuf:"bytes,12,opt,name=Tags,proto3" json:"Tags,omitempty" dc:"标签"`                             // 标签
-	DetailInfo       string                 `protobuf:"bytes,13,opt,name=DetailInfo,proto3" json:"DetailInfo,omitempty" dc:"商品详情"`               // 商品详情
-	CreatedAt        *timestamppb.Timestamp `protobuf:"bytes,14,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`                           //
-	UpdatedAt        *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`                           //
-	DeletedAt        *timestamppb.Timestamp `protobuf:"bytes,16,opt,name=DeletedAt,proto3" json:"DeletedAt,omitempty"`                           //
+	Sort             int32                  `protobuf:"varint,6,opt,name=Sort,proto3" json:"Sort,omitempty" dc:"排序 倒序"`                          // 排序 倒序
+	Level1CategoryId int32                  `protobuf:"varint,7,opt,name=Level1CategoryId,proto3" json:"Level1CategoryId,omitempty" dc:"1级分类id"` // 1级分类id
+	Level2CategoryId int32                  `protobuf:"varint,8,opt,name=Level2CategoryId,proto3" json:"Level2CategoryId,omitempty" dc:"2级分类id"` // 2级分类id
+	Level3CategoryId int32                  `protobuf:"varint,9,opt,name=Level3CategoryId,proto3" json:"Level3CategoryId,omitempty" dc:"3级分类id"` // 3级分类id
+	Brand            string                 `protobuf:"bytes,10,opt,name=Brand,proto3" json:"Brand,omitempty" dc:"品牌"`                           // 品牌
+	Stock            int32                  `protobuf:"varint,11,opt,name=Stock,proto3" json:"Stock,omitempty" dc:"库存"`                          // 库存
+	Sale             int32                  `protobuf:"varint,12,opt,name=Sale,proto3" json:"Sale,omitempty" dc:"销量"`                            // 销量
+	Tags             string                 `protobuf:"bytes,13,opt,name=Tags,proto3" json:"Tags,omitempty" dc:"标签"`                             // 标签
+	DetailInfo       string                 `protobuf:"bytes,14,opt,name=DetailInfo,proto3" json:"DetailInfo,omitempty" dc:"商品详情"`               // 商品详情
+	CreatedAt        *timestamppb.Timestamp `protobuf:"bytes,15,opt,name=CreatedAt,proto3" json:"CreatedAt,omitempty"`                           //
+	UpdatedAt        *timestamppb.Timestamp `protobuf:"bytes,16,opt,name=UpdatedAt,proto3" json:"UpdatedAt,omitempty"`                           //
+	DeletedAt        *timestamppb.Timestamp `protobuf:"bytes,17,opt,name=DeletedAt,proto3" json:"DeletedAt,omitempty"`                           //
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -110,6 +111,13 @@ func (x *GoodsInfo) GetPicUrl() string {
 func (x *GoodsInfo) GetPrice() int32 {
 	if x != nil {
 		return x.Price
+	}
+	return 0
+}
+
+func (x *GoodsInfo) GetSort() int32 {
+	if x != nil {
+		return x.Sort
 	}
 	return 0
 }
@@ -195,27 +203,28 @@ var File_pbentity_goods_info_proto protoreflect.FileDescriptor
 
 const file_pbentity_goods_info_proto_rawDesc = "" +
 	"\n" +
-	"\x19pbentity/goods_info.proto\x12\bpbentity\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9b\x04\n" +
+	"\x19pbentity/goods_info.proto\x12\bpbentity\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaf\x04\n" +
 	"\tGoodsInfo\x12\x0e\n" +
 	"\x02Id\x18\x01 \x01(\rR\x02Id\x12\x12\n" +
 	"\x04Name\x18\x02 \x01(\tR\x04Name\x12\x16\n" +
 	"\x06Images\x18\x03 \x01(\tR\x06Images\x12\x16\n" +
 	"\x06PicUrl\x18\x04 \x01(\tR\x06PicUrl\x12\x14\n" +
-	"\x05Price\x18\x05 \x01(\x05R\x05Price\x12*\n" +
-	"\x10Level1CategoryId\x18\x06 \x01(\x05R\x10Level1CategoryId\x12*\n" +
-	"\x10Level2CategoryId\x18\a \x01(\x05R\x10Level2CategoryId\x12*\n" +
-	"\x10Level3CategoryId\x18\b \x01(\x05R\x10Level3CategoryId\x12\x14\n" +
-	"\x05Brand\x18\t \x01(\tR\x05Brand\x12\x14\n" +
-	"\x05Stock\x18\n" +
-	" \x01(\x05R\x05Stock\x12\x12\n" +
-	"\x04Sale\x18\v \x01(\x05R\x04Sale\x12\x12\n" +
-	"\x04Tags\x18\f \x01(\tR\x04Tags\x12\x1e\n" +
+	"\x05Price\x18\x05 \x01(\x05R\x05Price\x12\x12\n" +
+	"\x04Sort\x18\x06 \x01(\x05R\x04Sort\x12*\n" +
+	"\x10Level1CategoryId\x18\a \x01(\x05R\x10Level1CategoryId\x12*\n" +
+	"\x10Level2CategoryId\x18\b \x01(\x05R\x10Level2CategoryId\x12*\n" +
+	"\x10Level3CategoryId\x18\t \x01(\x05R\x10Level3CategoryId\x12\x14\n" +
+	"\x05Brand\x18\n" +
+	" \x01(\tR\x05Brand\x12\x14\n" +
+	"\x05Stock\x18\v \x01(\x05R\x05Stock\x12\x12\n" +
+	"\x04Sale\x18\f \x01(\x05R\x04Sale\x12\x12\n" +
+	"\x04Tags\x18\r \x01(\tR\x04Tags\x12\x1e\n" +
 	"\n" +
-	"DetailInfo\x18\r \x01(\tR\n" +
+	"DetailInfo\x18\x0e \x01(\tR\n" +
 	"DetailInfo\x128\n" +
-	"\tCreatedAt\x18\x0e \x01(\v2\x1a.google.protobuf.TimestampR\tCreatedAt\x128\n" +
-	"\tUpdatedAt\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\tUpdatedAt\x128\n" +
-	"\tDeletedAt\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\tDeletedAtB3Z1shop-goframe-micro-service/app/goods/api/pbentityb\x06proto3"
+	"\tCreatedAt\x18\x0f \x01(\v2\x1a.google.protobuf.TimestampR\tCreatedAt\x128\n" +
+	"\tUpdatedAt\x18\x10 \x01(\v2\x1a.google.protobuf.TimestampR\tUpdatedAt\x128\n" +
+	"\tDeletedAt\x18\x11 \x01(\v2\x1a.google.protobuf.TimestampR\tDeletedAtB3Z1shop-goframe-micro-service/app/goods/api/pbentityb\x06proto3"
 
 var (
 	file_pbentity_goods_info_proto_rawDescOnce sync.Once

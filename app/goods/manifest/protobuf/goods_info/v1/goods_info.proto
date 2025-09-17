@@ -43,6 +43,7 @@ message GoodsInfoCreateReq {
   string tags = 10;
   string detail_info = 11;
   string pic_url=12;
+  uint32 sort=13;
 }
 
 message GoodsInfoCreateRes {
@@ -63,6 +64,7 @@ message GoodsInfoUpdateReq {
   string tags = 11;
   string detail_info = 12;
   string pic_url=13;
+  uint32 sort=14;
 }
 
 message GoodsInfoUpdateRes {
@@ -80,6 +82,7 @@ message GoodsInfoDeleteRes {
 message GoodsInfoGetListReq {
   uint32 page = 1;
   uint32 size = 2;  // 修改：字段编号必须从1开始递增
+  uint32 is_hot=3; //is_hot=1表示只返回热门商品
 }
 
 message GoodsInfoListResponse {
