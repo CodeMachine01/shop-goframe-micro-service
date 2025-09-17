@@ -21,13 +21,23 @@ var (
 		Brief: "start http gateway-h5 server",
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
+			// 创建控制器实例一次，重复使用
+			userController := user.NewV1()
+			goodsController := goods.NewV1()
+			bannerController := banner.NewV1()
+			interactionController := interaction.NewV1()
+			orderController := order.NewV1()
 			s.Group("/frontend", func(group *ghttp.RouterGroup) {
 				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Group("/", func(group *ghttp.RouterGroup) {
 					group.Bind(
-						user.NewV1().UserInfoLogin,
-						user.NewV1().UserInfoRegister,
-						banner.NewV1(),
+						userController.UserInfoLogin,
+						userController.UserInfoRegister,
+						goodsController.CategoryInfoGetAll,
+						goodsController.CategoryInfoGetList,
+						goodsController.GoodsInfoGetDetail,
+						goodsController.GoodsInfoGetList,
+						bannerController,
 					)
 				})
 				// 需要JWT验证的路由
@@ -35,15 +45,18 @@ var (
 					group.Middleware(middleware.JWTAuth)
 					group.Bind(
 						//需要认证的接口
-						user.NewV1().UserInfoUpdatePassword,
-						user.NewV1().UserInfo,
-						user.NewV1().ConsigneeInfoCreate,
-						user.NewV1().ConsigneeInfoUpdate,
-						user.NewV1().ConsigneeInfoDelete,
-						user.NewV1().ConsigneeInfoGetList,
-						interaction.NewV1(),
-						goods.NewV1(),
-						order.NewV1(),
+						userController.ConsigneeInfoCreate,
+						userController.ConsigneeInfoDelete,
+						userController.ConsigneeInfoGetList,
+						userController.ConsigneeInfoUpdate,
+						userController.UserInfo,
+						userController.UserInfoUpdatePassword,
+
+						goodsController.CartInfoGetList,
+						goodsController.CartInfoCreate,
+						goodsController.CartInfoDelete,
+						interactionController,
+						orderController,
 					)
 				})
 			})

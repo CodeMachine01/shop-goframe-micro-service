@@ -144,3 +144,12 @@ Stack:
         D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
 
 2025-09-17T10:09:08 {c4610d267aef65184f9d5a5859349b7c} gateway-h5 service deregister: &{Service:0xc0002a5b20 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
+2025-09-17T10:55:36 {e4f8631363f26518cb83684847f2e6c5} gateway-h5 200 "GET http 127.0.0.1:8199 /frontend/cart?page&size HTTP/1.1" 530.600, 127.0.0.1, "", "Apifox/1.0.0 (https://apifox.com)", 61, "Not Authorized", ""
+Stack:
+1. 未提供Token
+   1).  shop-goframe-micro-service/utility/middleware.JWTAuth
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/jwt.go:18
+   2).  shop-goframe-micro-service/utility/middleware.MiddlewareCORS
+        D:/ProjectFiles/GoLand/shop-goframe-micro-service/utility/middleware/middleware.go:32
+
+2025-09-17T10:58:17 {a8933a2738f265184eb6dc61c1f8b394} gateway-h5 service deregister: &{Service:0xc00033dc70 Endpoints:192.168.190.1:8199,192.168.72.1:8199,172.30.103.68:8199,172.29.208.1:8199,172.17.144.1:8199 Metadata:map[insecure:true protocol:http]}
